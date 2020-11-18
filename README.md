@@ -1,8 +1,7 @@
 
 TLS Protocol Authentication and File Transmission
 =================================================
-<a name="overview"/><br>
-
+<a name="overview"/>
 A Final Project for CS165 Computer Security<br>
 Written by Jacob Tan and Richard Duong<br>
 
