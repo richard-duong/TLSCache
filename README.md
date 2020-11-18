@@ -1,5 +1,6 @@
 <a name="overview"/>
 
+
 TLS Protocol Authentication and File Transmission
 =================================================
 A Final Project for CS165 Computer Security<br>
@@ -9,7 +10,7 @@ Written by Jacob Tan and Richard Duong<br>
 To implement a secure proxy application which uses the TLS protocol to provide simple authentication and secure file transmission.<br>
 With this, we can demonstrate how a large scale system with a server caching objects inside of proxies can<br>
 interact with a client and provide objects upon request in a secure and optimal manner.<br>
-[More on the assignment specifications](#specifications)<br><br>
+[The full assignment specifications](docs/finalproject.pdf)<br><br>
 
 ___
 <a name="table-of-contents"/>
@@ -20,7 +21,6 @@ Table of Contents
 1. [Overview](#overview)<br>
 2. [Table of Contents](#table-of-contents)<br>
 3. [How to use](#how-to-use)<br>
-4. [Assignment Specifications](#specifications)<br>
 5. [System Design](#system-design)<br>
         a) [Client](#client-design)<br>
         b) [Server](#server-design)<br>
@@ -29,7 +29,7 @@ Table of Contents
 6. [Component Design](#component-design)<br>
         a) [Packet](#packet-design)<br>
         b) [TLS](#tls-design)<br>
-        c) [Rendezvous Hashing](#hashing-design)<br>
+        c) [Rendezvous Hashing](#rendezvous-hashing-design)<br>
         d) [Bloom Filter](#bloom-filter-design)<br>
 5. [Distribution of Work](#distribution-of-work)<br>
         a) [Jacob's Contributions](#jacob-contribution)<br>
@@ -43,11 +43,6 @@ How to use
 ==========
 
 
-___
-<a name="specifications"/>
-
-Assignment Specifications
-=========================
 
 
 ___
@@ -110,11 +105,13 @@ Component Design
 
 
 
-<a name="hashing-design"/>
+<a name="rendezvous-hashing-design"/>
 
-## Hashing Design
-
-
+## Rendezvous Hashing Design
+The [Rendezvous Hash](https://en.wikipedia.org/wiki/Rendezvous_hashing) is used to solve the distributed hash table problem. In this case, we have many objects<br>
+distributed across multiple proxies. In order to ensure a relatively even distribution of objects, let **O** denote the object name, **P** denote the proxy name,<br>
+and **h(S)** be the hash function. To determine which proxy to send the object to, we run **h(O||P)** for each proxy, and select the largest hash value.<br>
+Whichever proxy was used in that largest hash value, is the proxy that will receive the object.<br><br>
 
 
 <a name="bloom-filter"/>
