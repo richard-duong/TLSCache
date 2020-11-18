@@ -1,8 +1,7 @@
+<a name="overview"/>
 
 TLS Protocol Authentication and File Transmission
 =================================================
-<a name="overview"/>
-
 A Final Project for CS165 Computer Security<br>
 Written by Jacob Tan and Richard Duong<br>
 
@@ -13,11 +12,11 @@ interact with a client and provide objects upon request in a secure and optimal 
 [More on the assignment specifications](#specifications)<br><br>
 
 ___
+<a name="table-of-contents"/>
+
 
 Table of Contents
 =================
-<a name="table-of-contents"/>
-
 1. [Overview](#overview)<br>
 2. [Table of Contents](#table-of-contents)<br>
 3. [How to use](#how-to-use)<br>
@@ -38,75 +37,117 @@ Table of Contents
 6. [Final Words](#final-words)<br>
 
 ___
+<a name="how-to-use"/>
 
 How to use
 ==========
-<a name="how-to-use"/>
+
 
 ___
+<a name="specifications"/>
 
 Assignment Specifications
 =========================
-<a name="specifications"/>
 
 
 ___
+<a name="system-design"/>
 
 System Design
 =============
-<a name="system-design"/>
 
-## Client Design
+
+
 <a name="client-design"/>
 
-## Server Design
+## Client Design
+
+
+
+
+
 <a name="server-design"/>
 
-## Proxy Design
+## Server Design
+
+
+
+
+
 <a name="proxy-design"/>
 
-## Blacklist Design
+## Proxy Design
+
+
+
+
+
 <a name="blacklist-design"/>
 
+## Blacklist Design
+
+
 ___
+<a name="component-design"/>
 
 Component Design
 ================
-<a name="component-design"/>
 
-## Packet Design
+
+
+
 <a name="packet-design"/>
 
-## TLS Design
+## Packet Design
+
+
+
+
 <a name="tls-design"/>
 
-## Hashing Design
+## TLS Design
+
+
+
+
 <a name="hashing-design"/>
 
-## Bloom Filter Design
+## Hashing Design
+
+
+
+
 <a name="bloom-filter"/>
 
+## Bloom Filter Design
+
+
 ___
+<a name="distribution-of-work"/>
 
 Distribution of work
 ====================
-<a name="distribution-of-work"/>
-  
-## Jacob's Contributions
+
+
+
+
 <a name="jacob-contribution"/>
   
+## Jacob's Contributions
+
+
+<a name="richard-contribution"/>  
+
 ## Richard's Contributions
-<a name="richard-contribution"/>
-    
+
+  
 + Designed the [README](readme.md)<br>
 + 
   
 ___ 
+<a name="final-words"/>
 
 Final Words
 ===========
-<a name="final-words"/>
 
 
-
-  
