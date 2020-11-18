@@ -141,7 +141,7 @@ Distribution of work
 ## Richard's Contributions
 
   
-+ Designed the [README](readme.md)<br>
++ Designed the [README](README.md)<br>
 + 
   
 ___ 
