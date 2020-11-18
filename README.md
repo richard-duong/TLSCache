@@ -1,7 +1,8 @@
 
 TLS Protocol Authentication and File Transmission
 =================================================
-<a name="overview"/>
+<a name="overview"/><br>
+
 A Final Project for CS165 Computer Security<br>
 Written by Jacob Tan and Richard Duong<br>
 
@@ -9,10 +10,11 @@ Written by Jacob Tan and Richard Duong<br>
 To demonstrate how a large scale system with a server caching objects inside of proxies can<br>
 interact with a client to provide objects upon request in a secure and optimal manner.<br><br>
 
+___
 
 Table of Contents
 =================
-<a name="table-of-contents"/>
+<a name="table-of-contents"/><br>
 
 1. [Overview](#overview)<br>
 2. [Table of Contents](#table-of-contents)<br>
@@ -33,15 +35,19 @@ Table of Contents
         b) [Richard's Contributions](#richard-contribution)<br>
 6. [Final Words](#final-words)<br>
 
+___
+
 How to use
 ==========
-<a name="how-to-use"/>
+<a name="how-to-use"/><br>
 
+___
 
 Assignment Specifications
 =========================
-<a name="specifications"/>
+<a name="specifications"/><br>
 
+___
 
 System Design
 =============
@@ -59,6 +65,7 @@ System Design
 ## Blacklist Design
 <a name="blacklist-design"/><br>
 
+___
 
 Component Design
 ================
@@ -76,6 +83,7 @@ Component Design
 ## Bloom Filter Design
 <a name="bloom-filter"/><br>
 
+___
 
 Distribution of work
 ====================
@@ -89,6 +97,8 @@ Distribution of work
     
 + Designed the [README](readme.md)
   
+___ 
+
 Final Words
 ===========
 <a name="final-words"/><br>
