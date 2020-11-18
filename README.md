@@ -7,9 +7,7 @@ A Final Project for CS165 Computer Security<br>
 Written by Jacob Tan and Richard Duong<br>
 
 ## Objective:
-To implement a secure proxy application which uses the TLS protocol to provide simple authentication and secure file transmission.<br>
-With this, we can demonstrate how a large scale system with a server caching objects inside of proxies can<br>
-interact with a client and provide objects upon request in a secure and optimal manner.<br>
+Implement a secure proxy application using TLS protocol to provide simple authentication and secure file transmission. With this, we can demonstrate how a large scale system with a server caching objects inside of proxies can interact with a client and provide objects upon request in a secure and optimal manner.<br>
 [The full assignment specifications](docs/finalproject.pdf)<br><br>
 
 ___
@@ -108,10 +106,7 @@ Component Design
 <a name="rendezvous-hashing-design"/>
 
 ## Rendezvous Hashing Design
-The [Rendezvous Hash](https://en.wikipedia.org/wiki/Rendezvous_hashing) is used to solve the distributed hash table problem. In this case, we have many objects<br>
-distributed across multiple proxies. In order to ensure a relatively even distribution of objects, let **O** denote the object name, **P** denote the proxy name,<br>
-and **h(S)** be the hash function. To determine which proxy to send the object to, we run **h(O||P)** for each proxy, and select the largest hash value.<br>
-Whichever proxy was used in that largest hash value, is the proxy that will receive the object.<br><br>
+The [Rendezvous Hash](https://en.wikipedia.org/wiki/Rendezvous_hashing) is used to solve the distributed hash table problem. In this case, we have many objects distributed across multiple proxies. In order to ensure a relatively even distribution of objects, let **O** denote the object name, **P** denote the proxy name, and **h(S)** be the hash function. To determine which proxy to send the object to, we run **h(O||P)** for each proxy, and select the largest hash value.<br> Whichever proxy was used in that largest hash value, is the proxy that will receive the object.<br><br>
 
 
 <a name="bloom-filter"/>
