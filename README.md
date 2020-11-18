@@ -2,18 +2,21 @@
 TLS Protocol Authentication and File Transmission
 =================================================
 <a name="overview"/>
+
 A Final Project for CS165 Computer Security<br>
 Written by Jacob Tan and Richard Duong<br>
 
 ## Objective:
-To demonstrate how a large scale system with a server caching objects inside of proxies can<br>
-interact with a client to provide objects upon request in a secure and optimal manner.<br><br>
+To implement a secure proxy application which uses the TLS protocol to provide simple authentication and secure file transmission.<br>
+With this, we can demonstrate how a large scale system with a server caching objects inside of proxies can<br>
+interact with a client and provide objects upon request in a secure and optimal manner.<br>
+[More on the assignment specifications](#specifications)<br><br>
 
 ___
 
 Table of Contents
 =================
-<a name="table-of-contents"/><br>
+<a name="table-of-contents"/>
 
 1. [Overview](#overview)<br>
 2. [Table of Contents](#table-of-contents)<br>
@@ -38,69 +41,71 @@ ___
 
 How to use
 ==========
-<a name="how-to-use"/><br>
+<a name="how-to-use"/>
 
 ___
 
 Assignment Specifications
 =========================
-<a name="specifications"/><br>
+<a name="specifications"/>
+
 
 ___
 
 System Design
 =============
-<a name="system-design"/><br>
+<a name="system-design"/>
 
 ## Client Design
-<a name="client-design"/><br>
+<a name="client-design"/>
 
 ## Server Design
-<a name="server-design"/><br>
+<a name="server-design"/>
 
 ## Proxy Design
-<a name="proxy-design"/><br>
+<a name="proxy-design"/>
 
 ## Blacklist Design
-<a name="blacklist-design"/><br>
+<a name="blacklist-design"/>
 
 ___
 
 Component Design
 ================
-<a name="component-design"/><br>
+<a name="component-design"/>
 
 ## Packet Design
-<a name="packet-design"/><br>
+<a name="packet-design"/>
 
 ## TLS Design
-<a name="tls-design"/><br>
+<a name="tls-design"/>
 
 ## Hashing Design
-<a name="hashing-design"/><br>
+<a name="hashing-design"/>
 
 ## Bloom Filter Design
-<a name="bloom-filter"/><br>
+<a name="bloom-filter"/>
 
 ___
 
 Distribution of work
 ====================
-<a name="distribution-of-work"/><br>
+<a name="distribution-of-work"/>
   
 ## Jacob's Contributions
-<a name="jacob-contribution"/><br>
+<a name="jacob-contribution"/>
   
 ## Richard's Contributions
-<a name="richard-contribution"/><br>
+<a name="richard-contribution"/>
     
-+ Designed the [README](readme.md)
++ Designed the [README](readme.md)<br>
++ 
   
 ___ 
 
 Final Words
 ===========
-<a name="final-words"/><br>
+<a name="final-words"/>
 
 
 
