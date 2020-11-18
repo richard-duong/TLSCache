@@ -79,19 +79,19 @@ Component Design
 
 Distribution of work
 ====================
-<a name="distribution-of-work"><br>
+<a name="distribution-of-work"/><br>
   
 ## Jacob's Contributions
-<a name="jacob-contribution"\><br>
+<a name="jacob-contribution"/><br>
   
 ## Richard's Contributions
-<a name="richard-contribution"\><br>
+<a name="richard-contribution"/><br>
     
 + Designed the [README](readme.md)
   
 Final Words
 ===========
-<a name="final-words"\><br>
+<a name="final-words"/><br>
 
 
 
