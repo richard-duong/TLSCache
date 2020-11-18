@@ -19,18 +19,18 @@ Table of Contents
 3. [How to use](#how-to-use)<br>
 4. [Assignment Specifications](#specifications)<br>
 5. [System Design](#system-design)<br>
-    a. [Client](#client-design)<br>
-    b. [Server](#server-design)<br>
-    c. [Proxy](#proxy-design)<br>
-    d. [Blacklist](#blacklist-design)<br>
+        a) [Client](#client-design)<br>
+        b) [Server](#server-design)<br>
+        c) [Proxy](#proxy-design)<br>
+        d) [Blacklist](#blacklist-design)<br>
 6. [Component Design](#component-design)<br>
-    a. [Packet](#packet-design)<br>
-    b. [TLS](#tls-design)<br>
-    c. [Rendezvous Hashing](#hashing-design)<br>
-    d. [Bloom Filter](#bloom-filter-design)<br>
+        a) [Packet](#packet-design)<br>
+        b) [TLS](#tls-design)<br>
+        c) [Rendezvous Hashing](#hashing-design)<br>
+        d) [Bloom Filter](#bloom-filter-design)<br>
 5. [Distribution of Work](#distribution-of-work)<br>
-    a. [Jacob's Contributions](#jacob-contribution)<br>
-    b. [Richard's Contributions](#richard-contribution)<br>
+        a) [Jacob's Contributions](#jacob-contribution)<br>
+        b) [Richard's Contributions](#richard-contribution)<br>
 6. [Final Words](#final-words)<br>
 
 How to use
@@ -79,18 +79,19 @@ Component Design
 
 Distribution of work
 ====================
-<a name="distribution-of-work">
+<a name="distribution-of-work"><br>
   
 ## Jacob's Contributions
-<a name="jacob-contribution"\>
+<a name="jacob-contribution"\><br>
   
 ## Richard's Contributions
-<a name="richard-contribution"\>
+<a name="richard-contribution"\><br>
+    
 + Designed the [README](readme.md)
   
 Final Words
 ===========
-<a name="final-words"\>
+<a name="final-words"\><br>
 
 
 
