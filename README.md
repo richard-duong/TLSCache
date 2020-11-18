@@ -106,7 +106,7 @@ Component Design
 <a name="rendezvous-hashing-design"/>
 
 ## Rendezvous Hashing Design
-The [Rendezvous Hash](https://en.wikipedia.org/wiki/Rendezvous_hashing) is used to solve the distributed hash table problem. In this case, we have many objects distributed across multiple proxies. In order to ensure a relatively even distribution of objects, let **O** denote the object name, **P** denote the proxy name, and **h(S)** be the hash function. To determine which proxy to send the object to, we run **h(O||P)** for each proxy, and select the largest hash value.<br> Whichever proxy was used in that largest hash value, is the proxy that will receive the object.<br><br>
+The [Rendezvous Hash](https://en.wikipedia.org/wiki/Rendezvous_hashing) is used to solve the distributed hash table problem. In this case, we have many objects distributed across multiple proxies. In order to ensure a relatively even distribution of objects, let **O** denote the object name, **P** denote the proxy name, and **h(S)** be the [Polynomial Rolling Hash Function](https://en.wikipedia.org/wiki/Rolling_hash). To determine which proxy to send the object to, we run **h(O||P)** for each proxy, and select the largest hash value. Whichever proxy was used in that largest hash value, is the proxy that will receive the object.<br><br>
 
 
 <a name="bloom-filter"/>
