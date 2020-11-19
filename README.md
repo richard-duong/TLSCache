@@ -33,6 +33,7 @@ Table of Contents
         a) [Jacob's Contributions](#jacob-contribution)<br>
         b) [Richard's Contributions](#richard-contribution)<br>
 6. [Final Words](#final-words)<br>
+7. [References](#references)<br>
 
 ___
 <a name="how-to-use"/>
@@ -141,5 +142,17 @@ ___
 
 Final Words
 ===========
+
+
+___
+<a name="references/>
+
+References
+==========
+
+1. [Murmur Hash](https://en.wikipedia.org/wiki/MurmurHash)<br>
+2. [Murmur Hash Header](https://github.com/rurban/smhasher/blob/master/MurmurHash3.h)<br>
+3. [Murmur Hash Implementation](https://github.com/rurban/smhasher/blob/master/MurmurHash3.cpp)<br>
+4. [Bloom Filter Analysis](https://www.cs.ucr.edu/~ravi/Papers/Jrnl/BloomFilterAnalysis.pdf)<br>
 
 
