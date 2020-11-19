@@ -3,8 +3,8 @@
 
 TLS Protocol Authentication and File Transmission
 =================================================
-A Final Project for CS165 Computer Security<br>
-Written by Jacob Tan and Richard Duong<br>
+A Final Project for CS165 Computer Security designed by Jacob Tan and Richard Duong<br>
+[Link to the Github Repository here](https://github.com/richard-duong/tls_protocol)<br>
 
 ## Objective:
 Implement a secure proxy application using TLS protocol to provide simple authentication and secure file transmission. With this, we can demonstrate how a large scale system with a server caching objects inside of proxies can interact with a client and provide objects upon request in a secure and optimal manner.<br>
