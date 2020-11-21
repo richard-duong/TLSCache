@@ -150,9 +150,13 @@ ___
 References
 ==========
 
-1. [Murmur Hash](https://en.wikipedia.org/wiki/MurmurHash)<br>
-2. [Murmur Hash Header](https://github.com/rurban/smhasher/blob/master/MurmurHash3.h)<br>
-3. [Murmur Hash Implementation](https://github.com/rurban/smhasher/blob/master/MurmurHash3.cpp)<br>
-4. [Bloom Filter Analysis](https://www.cs.ucr.edu/~ravi/Papers/Jrnl/BloomFilterAnalysis.pdf)<br>
+[Murmur Hash](https://en.wikipedia.org/wiki/MurmurHash)<br>
+[Murmur Hash Header](https://github.com/rurban/smhasher/blob/master/MurmurHash3.h)<br>
+[Murmur Hash Implementation](https://github.com/rurban/smhasher/blob/master/MurmurHash3.cpp)<br>
+[Bloom Filter Analysis](https://www.cs.ucr.edu/~ravi/Papers/Jrnl/BloomFilterAnalysis.pdf)<br>
+[TLS Manual](https://man.openbsd.org/tls_init.3)<br>
+[Bob Beck TLS Tutorial](https://github.com/bob-beck/libtls/blob/master/TUTORIAL.md)<br>
+[Certificate Authority](https://en.wikipedia.org/wiki/Certificate_authority)<br>
+[Consistent Hashing](https://en.wikipedia.org/wiki/Consistent_hashing)<br>
 
 
