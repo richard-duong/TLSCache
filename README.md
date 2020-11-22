@@ -56,10 +56,10 @@ Phase Design
 ============
 
 **1) Initialization**<br>
-This phase prepares the server and proxies with the appropriate blacklists & Bloom Filters<br>
+This phase prepares the server and proxies with the appropriate blacklists & Bloom Filters<br><br>
 
 **2) Standard Application Process**<br>
-This phase evaluates our clients' requests without a match on the Bloom Filter<br>
+This phase evaluates our clients' requests without a match on the Bloom Filter<br><br>
 
 **3) Nonstandard Application Process with False Positives**<br>
 This phase evaluates our clients' requests with a match on the Bloom Filter<br><br>
@@ -76,21 +76,24 @@ ___
 - Proxy name/port list<br>
 - HRW hash key<br>
 - BF hash keys<br>
+
 **Steps:**
 - Read objects from file<br>
 - Generate Bloom Filter for each proxy to use<br>
 - Wait for all proxies to connect<br><br>
+![Server Initialization Image](img/init-server.png)<br><br>
 
 ### Proxy Initialization
 **Has access to:**
 - Server port<br>
 - TLS certificate<br>
 - Relevant blacklist object file<br>
+
 **Steps:**
 - Generate trie from reading relevant blacklist<br>
 - Request the Bloom Filter from the server<br>
 - Retrieve and copy the Bloom Filter from the buffer<br><br>
-![Proxy Initialization Image](img/init-proxy.png)
+![Proxy Initialization Image](img/init-proxy.png)<br><br>
 
 ### Application deploy
 **Steps:**
@@ -121,7 +124,7 @@ ___
 - Proxy requests object from server<br>
 - Server checks locally for object, finds object<br>
 - Server returns object to Proxy<br>
-- Proxy returns object to Client<br>
+- Proxy returns object to Client<br><br>
 ![Client requests object on server no FP Image](img/standard-request-server.png)<br><br>
 
 ### Scenario 3: Client requests nonexistent object
@@ -133,7 +136,7 @@ ___
 - Proxy requests object from server<br>
 - Server checks locally for object, finds no match<br>
 - Server returns *no object found* to Proxy<br>
-- Proxy returns *no object found* to Client<br>
+- Proxy returns *no object found* to Client<br><br>
 ![Client requests nonexistent object no FP Image](img/standard-request-none.png)<br><br>
 
 ### Scenario 4: Client requests blacklisted object
@@ -158,7 +161,7 @@ ___
 - Proxy checks if object is on Bloom Filter for blacklisted objects, finds match<br>
 - Proxy checks if object is on Trie of blacklisted objects, finds no match (false positive)<br>
 - Proxy checks local cache for object, finds object<br>
-- Proxy returns object to Client<br>
+- Proxy returns object to Client<br><br>
 ![Client requests object on proxy FP Image](img/nonstandard-request-proxy.png)<br><br>
 
 ### Scenario 2: Client requests object on server
@@ -171,7 +174,7 @@ ___
 - Proxy requests object from server<br>
 - Server checks locally for object, finds object<br>
 - Server returns object to Proxy<br>
-- Proxy returns object to Client<br>
+- Proxy returns object to Client<br><br>
 ![Client requests object on server FP Image](img/nonstandard-request-server.png)<br><br>
 
 ### Scenario 3: Client requests nonexistent object
@@ -184,7 +187,7 @@ ___
 - Proxy requests object from server<br>
 - Server checks locally for object, finds no match<br>
 - Server returns *no object found* to Proxy<br>
-- Proxy returns *no object found* to Client<br>
+- Proxy returns *no object found* to Client<br><br>
 ![Client requests nonexistent object FP Image](img/nonstandard-request-none.png)<br><br>
 
 
