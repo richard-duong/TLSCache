@@ -19,6 +19,10 @@ Table of Contents
 1. [Overview](#overview)<br>
 2. [Table of Contents](#table-of-contents)<br>
 3. [How to use](#how-to-use)<br>
+4. [Phase Design](#phase-design)<br>
+        a) [Initialization](#init-phase)<br>
+        b) [Application without False Positive](#no-fp-phase)<br>
+        c) [Application with False Positive](#fp-phase)<br>
 5. [System Design](#system-design)<br>
         a) [Client](#client-design)<br>
         b) [Server](#server-design)<br>
@@ -29,17 +33,75 @@ Table of Contents
         b) [TLS](#tls-design)<br>
         c) [Rendezvous Hashing](#rendezvous-hashing-design)<br>
         d) [Bloom Filter](#bloom-filter-design)<br>
-5. [Distribution of Work](#distribution-of-work)<br>
+7. [Distribution of Work](#distribution-of-work)<br>
         a) [Jacob's Contributions](#jacob-contribution)<br>
         b) [Richard's Contributions](#richard-contribution)<br>
-6. [Final Words](#final-words)<br>
-7. [References](#references)<br>
+8. [Final Words](#final-words)<br>
+9. [References](#references)<br>
+
+
 
 ___
 <a name="how-to-use"/>
 
 How to use
 ==========
+
+
+
+___
+<a name="phase-design"/>
+
+Phase Design
+============
+Our design has 3 main phases<br>
+**1) Initialization Phase:** This phase prepares the server and proxies with the appropriate blacklists & bloom filters<br>
+**2) Application without False Positive Phase:** This phase evaluates our clients' requests w/o a match on the bloom filter<br>
+**3) Application with False Positive Phase:** This phase evaluates our clients' requests w/ a match on the bloom filter<br><br>
+
+___
+<a name="init-phase"/>
+
+## 1) Initialization Phase
+
+### Initialize the server<br>
+**Has access to:**
+- Entire object file<br>
+- Blacklist object file<br>
+- Proxy name/port list<br>
+- HRW hash key<br>
+- BF hash keys<br>
+
+**Steps:**
+- Read Objects from File<br>
+- Generate bloom filter for each proxy to use<br>
+- Wait for all proxies to connect<br>
+
+### Initialize the proxy<br>
+**Has access to:**
+- Server port<br>
+- TLS certificate<br>
+- Relevant blacklist object file<br>
+
+**Steps:**
+- Generate trie from reading relevant blacklist<br>
+- Request the bloom filter from the server<br>
+- Retrieve and copy the bloom filter from the buffer<br>
+
+### Application deploy<br>
+**Steps:**
+- Clients can now be instantiated and the hashes become public
+
+<a name="no-fp-phase"/>
+
+## 2) Application without False Positive Phase
+
+
+
+
+<a name="fp-phase"/>
+
+## 3) Application with False Positive Phase
 
 
 
@@ -145,7 +207,7 @@ Final Words
 
 
 ___
-<a name="references/>
+<a name="references"/>
 
 References
 ==========
