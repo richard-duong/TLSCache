@@ -54,17 +54,22 @@ ___
 
 Phase Design
 ============
-Our design has 3 main phases<br>
-**1) Initialization Phase:** This phase prepares the server and proxies with the appropriate blacklists & bloom filters<br>
-**2) Application without False Positive Phase:** This phase evaluates our clients' requests w/o a match on the bloom filter<br>
-**3) Application with False Positive Phase:** This phase evaluates our clients' requests w/ a match on the bloom filter<br><br>
+
+**1) Initialization Phase**<br>
+This phase prepares the server and proxies with the appropriate blacklists & bloom filters<br>
+
+**2) Application without False Positive Phase**<br>
+This phase evaluates our clients' requests w/o a match on the bloom filter<br>
+
+**3) Application with False Positive Phase**<br>
+This phase evaluates our clients' requests w/ a match on the bloom filter<br><br>
 
 ___
 <a name="init-phase"/>
 
 ## 1) Initialization Phase
 
-### Initialize the server<br>
+### Server Initialization<br>
 **Has access to:**
 - Entire object file<br>
 - Blacklist object file<br>
@@ -75,9 +80,9 @@ ___
 **Steps:**
 - Read Objects from File<br>
 - Generate bloom filter for each proxy to use<br>
-- Wait for all proxies to connect<br>
+- Wait for all proxies to connect<br><br>
 
-### Initialize the proxy<br>
+### Proxy Initialization<br>
 **Has access to:**
 - Server port<br>
 - TLS certificate<br>
@@ -86,17 +91,54 @@ ___
 **Steps:**
 - Generate trie from reading relevant blacklist<br>
 - Request the bloom filter from the server<br>
-- Retrieve and copy the bloom filter from the buffer<br>
+- Retrieve and copy the bloom filter from the buffer<br><br>
+
+![Proxy Initialization Image](img/init-proxy.png)
 
 ### Application deploy<br>
 **Steps:**
-- Clients can now be instantiated and the hashes become public
+- Clients can now be instantiated and the hashes become public<br>
 
+<br><br>
 <a name="no-fp-phase"/>
 
 ## 2) Application without False Positive Phase
 
+### Scenario 1: Client finds request on proxy cache
+**Steps:**
+- Client runs HRW on object to determine which proxy holds the cached object<br>
+- Client requests object from result proxy<br>
+- Proxy runs object on Bloom Filter for blacklisted object, finds nothing<br>
+- Proxy checks local cache for object, finds object<br>
+- Proxy returns object to Client<br>
 
+![Client finds request on proxy cache no FP Image](img/find-proxy-no-fp.png)<br><br>
+
+### Scenario 2: Client finds request on server
+**Steps:**
+- Client runs HRW on object to determine which proxy holds the cached object<br>
+- Client requests object from result proxy<br>
+- Proxy runs object on Bloom Filter for blacklisted object, finds nothing<br>
+- Proxy checks local cache for object, finds nothing<br>
+- Proxy requests object from server<br>
+- Server checks locally for object, finds object<br>
+- Server returns object to Proxy<br>
+- Proxy returns object to Client<br>
+
+![Client finds request on server no FP Image](img/find-server-no-fp.png)<br><br>
+
+### Scenario 3: Client does not find object
+**Steps:**
+- Client runs HRW on object to determine which proxy holds the cached object<br>
+- Client requests object from result proxy<br>
+- Proxy runs object on Bloom filter for blacklisted object, finds nothing<br>
+- Proxy checks local cache for object, finds nothing<br>
+- Proxy requests object from server<br>
+- Server checks locally for object, finds nothing<br>
+- Server returns no object found to Proxy<br>
+- Proxy returns no object found to Client<br>
+
+![Client does not find object no FP Image](img/find-none-no-fp.png)<br><br>
 
 
 <a name="fp-phase"/>
