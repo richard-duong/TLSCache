@@ -144,7 +144,7 @@ This phase evaluates our clients' requests with a match on the Bloom Filter<br><
 - Client requests object from result proxy<br>
 - Proxy checks if object is on Bloom Filter of blacklisted objects, finds match<br>
 - Proxy checks if object is on Trie of blacklisted objects, finds match<br>
-- Proxy returns *access deny* to Client<br>
+- Proxy returns *access deny* to Client<br><br>
 ![Client requests blacklisted object no FP Image](img/standard-request-blacklist.png)<br><br>
 
 
