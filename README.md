@@ -80,7 +80,7 @@ This phase evaluates our clients' requests with a match on the Bloom Filter<br><
 - Read objects from file<br>
 - Generate Bloom Filter for each proxy to use<br>
 - Wait for all proxies to connect<br><br>
-![Server Initialization Image](img/initialize-server.png)<br><br>
+![Server Initialization Image](img/initialize-server.png)<br><br><br><br>
 
 ### Proxy Initialization
 **Has access to:**
@@ -92,7 +92,7 @@ This phase evaluates our clients' requests with a match on the Bloom Filter<br><
 - Generate trie from reading relevant blacklist<br>
 - Request the Bloom Filter from the server<br>
 - Retrieve and copy the Bloom Filter from the buffer<br><br>
-![Proxy Initialization Image](img/initialize-proxy.png)<br><br>
+![Proxy Initialization Image](img/initialize-proxy.png)<br><br><br><br>
 
 ### Application deploy
 **Steps:**
@@ -112,7 +112,7 @@ This phase evaluates our clients' requests with a match on the Bloom Filter<br><
 - Proxy checks if object is on Bloom Filter for blacklisted objects, finds no match<br>
 - Proxy checks local cache for object, finds object<br>
 - Proxy returns object to Client<br><br>
-![Client requests object on proxy no FP Image](img/standard-request-proxy.png)<br><br>
+![Client requests object on proxy no FP Image](img/standard-request-proxy.png)<br><br><br><br>
 
 ### Scenario 2: Client requests object on server
 **Steps:**
@@ -124,7 +124,7 @@ This phase evaluates our clients' requests with a match on the Bloom Filter<br><
 - Server checks locally for object, finds object<br>
 - Server returns object to Proxy<br>
 - Proxy returns object to Client<br><br>
-![Client requests object on server no FP Image](img/standard-request-server.png)<br><br>
+![Client requests object on server no FP Image](img/standard-request-server.png)<br><br><br><br>
 
 ### Scenario 3: Client requests nonexistent object
 **Steps:**
@@ -136,7 +136,7 @@ This phase evaluates our clients' requests with a match on the Bloom Filter<br><
 - Server checks locally for object, finds no match<br>
 - Server returns *no object found* to Proxy<br>
 - Proxy returns *no object found* to Client<br><br>
-![Client requests nonexistent object no FP Image](img/standard-request-none.png)<br><br>
+![Client requests nonexistent object no FP Image](img/standard-request-none.png)<br><br><br><br>
 
 ### Scenario 4: Client requests blacklisted object
 **Steps:**
@@ -145,7 +145,7 @@ This phase evaluates our clients' requests with a match on the Bloom Filter<br><
 - Proxy checks if object is on Bloom Filter of blacklisted objects, finds match<br>
 - Proxy checks if object is on Trie of blacklisted objects, finds match<br>
 - Proxy returns *access deny* to Client<br><br>
-![Client requests blacklisted object no FP Image](img/standard-request-blacklist.png)<br><br>
+![Client requests blacklisted object no FP Image](img/standard-request-blacklist.png)<br><br><br><br>
 
 
 
@@ -161,7 +161,7 @@ This phase evaluates our clients' requests with a match on the Bloom Filter<br><
 - Proxy checks if object is on Trie of blacklisted objects, finds no match (false positive)<br>
 - Proxy checks local cache for object, finds object<br>
 - Proxy returns object to Client<br><br>
-![Client requests object on proxy FP Image](img/nonstandard-request-proxy.png)<br><br>
+![Client requests object on proxy FP Image](img/nonstandard-request-proxy.png)<br><br><br><br>
 
 ### Scenario 2: Client requests object on server
 **Steps:**
@@ -174,7 +174,7 @@ This phase evaluates our clients' requests with a match on the Bloom Filter<br><
 - Server checks locally for object, finds object<br>
 - Server returns object to Proxy<br>
 - Proxy returns object to Client<br><br>
-![Client requests object on server FP Image](img/nonstandard-request-server.png)<br><br>
+![Client requests object on server FP Image](img/nonstandard-request-server.png)<br><br><br><br>
 
 ### Scenario 3: Client requests nonexistent object
 **Steps:**
@@ -187,7 +187,7 @@ This phase evaluates our clients' requests with a match on the Bloom Filter<br><
 - Server checks locally for object, finds no match<br>
 - Server returns *no object found* to Proxy<br>
 - Proxy returns *no object found* to Client<br><br>
-![Client requests nonexistent object FP Image](img/nonstandard-request-none.png)<br><br>
+![Client requests nonexistent object FP Image](img/nonstandard-request-none.png)<br><br><br><br>
 
 
 ___
