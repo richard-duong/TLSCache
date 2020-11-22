@@ -64,7 +64,6 @@ This phase evaluates our clients' requests without a match on the Bloom Filter<b
 **3) Nonstandard Application Process with False Positives**<br>
 This phase evaluates our clients' requests with a match on the Bloom Filter<br><br>
 
-___
 <a name="initial-phase"/>
 
 ## 1) Initialization
