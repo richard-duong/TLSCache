@@ -81,7 +81,7 @@ ___
 - Read objects from file<br>
 - Generate Bloom Filter for each proxy to use<br>
 - Wait for all proxies to connect<br><br>
-![Server Initialization Image](img/init-server.png)<br><br>
+![Server Initialization Image](img/initialize-server.png)<br><br>
 
 ### Proxy Initialization
 **Has access to:**
@@ -93,7 +93,7 @@ ___
 - Generate trie from reading relevant blacklist<br>
 - Request the Bloom Filter from the server<br>
 - Retrieve and copy the Bloom Filter from the buffer<br><br>
-![Proxy Initialization Image](img/init-proxy.png)<br><br>
+![Proxy Initialization Image](img/initialize-proxy.png)<br><br>
 
 ### Application deploy
 **Steps:**
