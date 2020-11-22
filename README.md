@@ -62,7 +62,7 @@ This phase prepares the server and proxies with the appropriate blacklists & Blo
 This phase evaluates our clients' requests without a match on the Bloom Filter<br><br>
 
 **3) Nonstandard Application Process with False Positives**<br>
-This phase evaluates our clients' requests with a match on the Bloom Filter<br><br>
+This phase evaluates our clients' requests with a match on the Bloom Filter<br><br><br><br>
 
 <a name="initial-phase"/>
 
@@ -97,7 +97,7 @@ This phase evaluates our clients' requests with a match on the Bloom Filter<br><
 ### Application deploy
 **Steps:**
 - Clients can now be instantiated and the hashes become public<br>
-- Alternative: signal all clients that<br><br>
+- Alternative: signal all clients that<br><br><br><br>
 
 
 
