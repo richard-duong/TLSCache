@@ -57,7 +57,7 @@ Phase Design
 ============
 
 **1) Initialization**<br>
-This phase prepares the server and proxies with the appropriate blacklists & Bloom Filters<br><br>
+This phase prepares the server and proxies with the appropriate blacklists & Bloom Filters<br>
 
 **2) Standard Application Process**<br>
 This phase evaluates our clients' requests without a match on the Bloom Filter<br><br>
@@ -72,7 +72,7 @@ This phase evaluates our clients' requests with a match on the Bloom Filter<br><
 
 + **Server Initialization**<br>
 + **Proxy Initialization**<br>
-+ **Client Initialization**<br><br>
++ **Client Initialization**<br><br><br><br>
 
 
 <a name="initial-phase-server"/>
@@ -124,7 +124,7 @@ This phase evaluates our clients' requests with a match on the Bloom Filter<br><
 <a name="standard-phase"/>
 
 ## 2) Standard Application Process
-This phase is the standard application process. In the standard application process, we are anticipating an object request that does not produce a false positive in the Bloom Filter. If the client makes a request to the application, they're expected to encounter one of these four scenarios.<br><br>
+This phase is the standard application process. In the standard application process, we are anticipating an object request that does not produce a false positive in the Bloom Filter. If the client makes a request to the application, they're expected to encounter one of these four scenarios.<br>
 + **Scenario 1: Client requests object on proxy**<br>
 + **Scenario 2: Client requests object on server**<br>
 + **Scenario 3: Client requests nonexistent object**<br>
@@ -261,7 +261,7 @@ Component Design
 + **TLS Design**<br>
 + **Rendezvous Hashing Design**<br>
 + **Bloom Filter Design**<br>
-+ **Trie Design**<br><br>
++ **Trie Design**<br><br><br><br>
 
 
 <a name="packet-design"/>
