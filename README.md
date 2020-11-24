@@ -70,6 +70,10 @@ This phase evaluates our clients' requests with a match on the Bloom Filter<br><
 
 ## 1) Initialization
 
++ **Server Initialization**<br>
++ **Proxy Initialization**<br>
++ **Client Initialization**<br><br>
+
 
 <a name="initial-phase-server"/>
 
@@ -121,10 +125,10 @@ This phase evaluates our clients' requests with a match on the Bloom Filter<br><
 
 ## 2) Standard Application Process
 This phase is the standard application process. In the standard application process, we are anticipating an object request that does not produce a false positive in the Bloom Filter. If the client makes a request to the application, they're expected to encounter one of these four scenarios.<br><br>
-**Scenario 1: Client requests object on proxy**<br>
-**Scenario 2: Client requests object on server**<br>
-**Scenario 3: Client requests nonexistent object**<br>
-**Scenario 4: Client requests blacklisted object**<br><br>
++ **Scenario 1: Client requests object on proxy**<br>
++ **Scenario 2: Client requests object on server**<br>
++ **Scenario 3: Client requests nonexistent object**<br>
++ **Scenario 4: Client requests blacklisted object**<br><br>
 
 
 
@@ -190,11 +194,11 @@ This phase is the standard application process. In the standard application proc
 <a name="nonstandard-phase"/>
 
 ## 3) Nonstandard Application Process with False Positives
-This phase is the nonstandard application process. In the nonstandard application process, we are anticipating an object request that produces false positive on the Bloom Filter. With a false positive, that means the situation where the client requests a blacklisted object is excluded. If the client makes a request to the application, they're expected to encounter one of these three scenarios.<br><br>
+This phase is the nonstandard application process. In the nonstandard application process, we are anticipating an object request that produces false positive on the Bloom Filter. With a false positive, that means the situation where the client requests a blacklisted object is excluded. If the client makes a request to the application, they're expected to encounter one of these three scenarios.<br>
 
-**Scenario 1: Client requests object on proxy**<br>
-**Scenario 2: Client requests object on server**<br>
-**Scenario 3: Client requests nonexistent object**<br><br>
++ **Scenario 1: Client requests object on proxy**<br>
++ **Scenario 2: Client requests object on server**<br>
++ **Scenario 3: Client requests nonexistent object**<br><br>
 
 
 <a name="nonstandard-phase-scene-1"/>
@@ -253,30 +257,36 @@ ___
 Component Design
 ================
 
-
++ **Packet Design**<br>
++ **TLS Design**<br>
++ **Rendezvous Hashing Design**<br>
++ **Bloom Filter Design**<br>
++ **Trie Design**<br><br>
 
 
 <a name="packet-design"/>
 
 ## Packet Design
-The packet design is a lot simpler, where you can just incorporate a message. However, since proxies and clients will be receiving different types of packets, we need some way of specifying the type of specification. Therefore we've reduced it down to 5 prefixes on the packet that will specify what to anticipate with packet requests coming in and packets sent out. The 5 packet prefixes are: **INI**, **GET**, **PUT**, **NON**, **DEN**.<br><br>
+The packet design when using TLS is much simpler than if one were to incorporate a checksum and manually encrypt, where you can just send . However, since proxies and clients will be receiving different types of packets, we need some way of specifying the type of specification. Therefore we've reduced it down to 5 prefixes on the packet that will specify what to anticipate with packet requests coming in and packets sent out. The 5 packet prefixes are: **INI**, **GET**, **PUT**, **NON**, **DEN**.<br><br>
 
-**INI**<br>
+### INI
 + Used by the proxy during [Proxy Initialization](#initial-phase-proxy) to notify the server that the proxy is ready, and to request the bloom filter from the server.<br> 
 + Used by the server to respond to the proxy during [Proxy Initialization](#initial-phase-proxy) to receive the bloom filter from the server.<br><br>
 
-**GET**<br>
-+ Used by the client during [Standard Application Process](#standard-phase) and [Nonstandard Application Process](#nonstandard-phase) in order to send an object request to the proxy<br>
-+ Used by the proxy during [Standard Application Process](#standard-phase) and [Nonstandard Application Process](#nonstandard-phase) in order to send an object request to the server<br>
+### GET
++ Used by the client during [Standard Application Process](#standard-phase) and [Nonstandard Application Process](#nonstandard-phase) to send an object request to the proxy<br>
++ Used by the proxy during [Standard Application Process](#standard-phase) and [Nonstandard Application Process](#nonstandard-phase) to send an object request to the server<br>
 
-**PUT**<br>
-+ Used by the proxy during [Standard Application Process](#standard-phase) and [Nonstandard Application Process](#nonstandard-phase) in order to return an object to the client<br>
-+ Used by the server during [Standard Application Process](#standard-phase) and [Nonstandard Application Process](#nonstandard-phase) in order to return an object to the proxy<br>
+### PUT
++ Used by the proxy during [Standard Application Process](#standard-phase) and [Nonstandard Application Process](#nonstandard-phase) to return an object to the client<br>
++ Used by the server during [Standard Application Process](#standard-phase) and [Nonstandard Application Process](#nonstandard-phase) to return an object to the proxy<br>
 
-**NON**<br>
-+ Used by the server during [Standard Client requests nonexistent object](#standard-phase-scene-3) and [Nonstandard Client requests nonexistent object](#nonstandard-phase-scene-3) to notify the proxy that the object was requested does not exist on the server<br>
-+ Used by the proxy during [Standard Client requests nonexistent object](#standard-phase-scene-3) and [Nonstandard Client requests nonexistent object](#nonstandard-phase-scene-3) to notify the client that the object was requested does not exist on the proxy or the server<br>
+### NON
++ Used by the server during [Standard Client requests nonexistent object](#standard-phase-scene-3) and [Nonstandard Client requests nonexistent object](#nonstandard-phase-scene-3) to notify the proxy that the object requested does not exist on the server<br>
++ Used by the proxy during [Standard Client requests nonexistent object](#standard-phase-scene-3) and [Nonstandard Client requests nonexistent object](#nonstandard-phase-scene-3) to notify the client that the object requested does not exist on the proxy or the server<br>
 
+### DEN
++ Used by the proxy during [Standard Client requests blacklisted object](#standard-phase-scene-4) to notify the client that the object requested was a blacklisted object<br><br>
 
 <a name="tls-design"/>
 
