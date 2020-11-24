@@ -266,10 +266,16 @@ The packet design is a lot simpler, where you can just incorporate a message. Ho
 + Used by the server to respond to the proxy during [Proxy Initialization](#initial-phase-proxy) to receive the bloom filter from the server.<br><br>
 
 **GET**<br>
-+ Used by the client during<br>
++ Used by the client during [Standard Application Process](#standard-phase) and [Nonstandard Application Process](#nonstandard-phase) in order to send an object request to the proxy<br>
++ Used by the proxy during [Standard Application Process](#standard-phase) and [Nonstandard Application Process](#nonstandard-phase) in order to send an object request to the server<br>
 
+**PUT**<br>
++ Used by the proxy during [Standard Application Process](#standard-phase) and [Nonstandard Application Process](#nonstandard-phase) in order to return an object to the client<br>
++ Used by the server during [Standard Application Process](#standard-phase) and [Nonstandard Application Process](#nonstandard-phase) in order to return an object to the proxy<br>
 
-
+**NON**<br>
++ Used by the server during [Standard Client requests nonexistent object](#standard-phase-scene-3) and [Nonstandard Client requests nonexistent object](#nonstandard-phase-scene-3) to notify the proxy that the object was requested does not exist on the server<br>
++ Used by the proxy during [Standard Client requests nonexistent object](#standard-phase-scene-3) and [Nonstandard Client requests nonexistent object](#nonstandard-phase-scene-3) to notify the client that the object was requested does not exist on the proxy or the server<br>
 
 
 <a name="tls-design"/>
