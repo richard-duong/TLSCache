@@ -60,7 +60,7 @@ Phase Design
 This phase prepares the server and proxies with the appropriate blacklists & Bloom Filters<br>
 
 **2) Standard Application Process**<br>
-This phase evaluates our clients' requests without a match on the Bloom Filter<br><br>
+This phase evaluates our clients' requests without a match on the Bloom Filter<br>
 
 **3) Nonstandard Application Process with False Positives**<br>
 This phase evaluates our clients' requests with a match on the Bloom Filter<br><br><br><br>
@@ -68,11 +68,11 @@ This phase evaluates our clients' requests with a match on the Bloom Filter<br><
 
 <a name="initial-phase"/>
 
-## 1) Initialization
-
+## Initialization
+Before being able to run the TLS application, we need to be able to set up the system so that we instantiate the bloom filters and trie blacklists on each proxy. On top of that, because proxies might be set at different times, so what we can do instead, is allow the server to wait for connections from the proxy, and once all of the connections are made, we can pass out the hash keys and allow clients to finally start requestiong objects<br>
 + **Server Initialization**<br>
 + **Proxy Initialization**<br>
-+ **Client Initialization**<br><br><br><br>
++ **Client Initialization**<br><br>
 
 
 <a name="initial-phase-server"/>
@@ -123,7 +123,7 @@ This phase evaluates our clients' requests with a match on the Bloom Filter<br><
 
 <a name="standard-phase"/>
 
-## 2) Standard Application Process
+## Standard Application Process
 This phase is the standard application process. In the standard application process, we are anticipating an object request that does not produce a false positive in the Bloom Filter. If the client makes a request to the application, they're expected to encounter one of these four scenarios.<br>
 + **Scenario 1: Client requests object on proxy**<br>
 + **Scenario 2: Client requests object on server**<br>
@@ -193,9 +193,8 @@ This phase is the standard application process. In the standard application proc
 
 <a name="nonstandard-phase"/>
 
-## 3) Nonstandard Application Process with False Positives
+## Nonstandard Application Process with False Positives
 This phase is the nonstandard application process. In the nonstandard application process, we are anticipating an object request that produces false positive on the Bloom Filter. With a false positive, that means the situation where the client requests a blacklisted object is excluded. If the client makes a request to the application, they're expected to encounter one of these three scenarios.<br>
-
 + **Scenario 1: Client requests object on proxy**<br>
 + **Scenario 2: Client requests object on server**<br>
 + **Scenario 3: Client requests nonexistent object**<br><br>
@@ -261,7 +260,7 @@ Component Design
 + **TLS Design**<br>
 + **Rendezvous Hashing Design**<br>
 + **Bloom Filter Design**<br>
-+ **Trie Design**<br><br><br><br>
++ **Trie Design**<br><br>
 
 
 <a name="packet-design"/>
