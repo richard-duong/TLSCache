@@ -69,7 +69,7 @@ This phase evaluates our clients' requests with a match on the Bloom Filter<br><
 <a name="initial-phase"/>
 
 ## Initialization
-Before being able to run the TLS application, we need to be able to set up the system so that we instantiate the bloom filters and trie blacklists on each proxy. On top of that, because proxies might be set at different times, so what we can do instead, is allow the server to wait for connections from the proxy, and once all of the connections are made, we can pass out the hash keys and allow clients to finally start requestiong objects<br>
+Before being able to run the TLS application, we need to be able to set up the system so that we instantiate the bloom filters and trie blacklists on each proxy. On top of that, because proxies might be set at different times, so what we can do instead, is allow the server to wait for connections from the proxy, and once all of the connections are made, we can pass out the hash keys and allow clients to finally start requesting objects.<br>
 + **Server Initialization**<br>
 + **Proxy Initialization**<br>
 + **Client Initialization**<br><br>
@@ -298,7 +298,7 @@ The packet design when using TLS is much simpler than if one were to incorporate
 <a name="rendezvous-hashing-design"/>
 
 ## Rendezvous Hashing Design
-The [Rendezvous Hash](https://en.wikipedia.org/wiki/Rendezvous_hashing) is used to solve the distributed hash table problem. In this case, we have many objects distributed across multiple proxies. In order to ensure a relatively even distribution of objects, let **O** denote the object name, **P** denote the proxy name, and **h(S)** be the [Polynomial Rolling Hash Function](https://en.wikipedia.org/wiki/Rolling_hash). To determine which proxy to send the object to, we run **h(O||P)** for each proxy, and select the largest hash value. Whichever proxy was used in that largest hash value, is the proxy that will receive the object.<br><br>
+The [Rendezvous (HRW) Hash](https://en.wikipedia.org/wiki/Rendezvous_hashing) is a standardized optimization of [Consistent Hashing](https://en.wikipedia.org/wiki/Consistent_hashing) used to solve a distributed hash table problem. In this case, we have many objects distributed across multiple proxies. In order to ensure a relatively even distribution of objects, let **O** denote the object name, **P** denote the proxy name, **S** be some string to hash, **k** be some integer key, and **h(S, k)** be the [Murmur3 Hash Function](https://en.wikipedia.org/wiki/MurmurHash) (Also see the [SMHasher Repository](https://github.com/rurban/smhasher) for the full implementation). To determine which proxy to send the object to, we run **h(O||P, k)** with static k for each proxy, and select the largest hash value. Whichever proxy was used in that largest hash value, is the proxy that we will distribute or receive the object from. The original paper <br><br>
 
 
 <a name="bloom-filter-design"/>
