@@ -1,6 +1,7 @@
 #include "MurmurHash3.cpp"
 #include <iostream>
 #include <cstring>
+#include <bitset>
 using namespace std;
 
 
@@ -23,36 +24,31 @@ void initialize(const char* blacklist[], int size)
         index = (unsigned long)out[0] % 60000; // this gives the bit to set to 1
         byte_index = index / 8; //this gives the index of the byte.
         bit_index = index % 8; //gives us the bit in that byte to set to 1
-        this->arr[byte_index] |= (1>>bit_index); //set the bit to 1
-        cout << index << endl;
+        this->arr[byte_index] |= (1 << bit_index); //set the bit to 1
         
         MurmurHash3_x64_128(blacklist[i],(uint64_t)strlen(blacklist[i]),2,out);
         index = (unsigned long)out[0] % 60000;
         byte_index = index / 8; //this gives the index of the byte.
         bit_index = index % 8; //gives us the bit in that byte to set to 1
-        this->arr[byte_index] |= (1>>bit_index); //set the bit to 1
-        cout << index << endl;
+        this->arr[byte_index] |= (1<<bit_index); //set the bit to 1
         
         MurmurHash3_x64_128(blacklist[i],(uint64_t)strlen(blacklist[i]),3,out);
         index = (unsigned long)out[0] % 60000;
         byte_index = index / 8; //this gives the index of the byte.
         bit_index = index % 8; //gives us the bit in that byte to set to 1
-        this->arr[byte_index] |= (1>>bit_index); //set the bit to 1
-        cout << index << endl;
+        this->arr[byte_index] |= (1<<bit_index); //set the bit to 1
         
         MurmurHash3_x64_128(blacklist[i],(uint64_t)strlen(blacklist[i]),4,out);
         index = (unsigned long)out[0] % 60000;
         byte_index = index / 8; //this gives the index of the byte.
         bit_index = index % 8; //gives us the bit in that byte to set to 1
-        this->arr[byte_index] |= (1>>bit_index); //set the bit to 1
-        cout << index << endl;
+        this->arr[byte_index] |= (1<<bit_index); //set the bit to 1
         
         MurmurHash3_x64_128(blacklist[i],(uint64_t)strlen(blacklist[i]),5,out);
         index = (unsigned long)out[0] % 60000;
         byte_index = index / 8; //this gives the index of the byte.
         bit_index = index % 8; //gives us the bit in that byte to set to 1
-        this->arr[byte_index] |= (1>>bit_index); //set the bit to 1
-        cout << index << endl;
+        this->arr[byte_index] |= (1<<bit_index); //set the bit to 1
     }
 }
 
@@ -80,43 +76,37 @@ int check(const char* object)
     index = (unsigned long)out[0] % 60000;
     byte_index = index / 8; //this gives the index of the byte.
     bit_index = index % 8; //gives us the bit in that byte to set to 1
-    if (arr[byte_index] & (1 >> bit_index)) {count++;}
-    //cout << "Count: " << count << endl;
-    cout << index << endl;
+    if (arr[byte_index] & (1 << bit_index)) {count++;}
     
+
     MurmurHash3_x64_128(object,(uint64_t)strlen(object),2,out);
     index = (unsigned long)out[0] % 60000;
     byte_index = index / 8; //this gives the index of the byte.
     bit_index = index % 8; //gives us the bit in that byte to set to 1
-    if (arr[byte_index] & (1 >> bit_index)) {count++;}
-    //cout << "Count: " << count << endl;
-    cout << index << endl;
-    
+    if (arr[byte_index] & (1 << bit_index)) {count++;}
+
+
     MurmurHash3_x64_128(object,(uint64_t)strlen(object),3,out);
     index = (unsigned long)out[0] % 60000;
     byte_index = index / 8; //this gives the index of the byte.
     bit_index = index % 8; //gives us the bit in that byte to set to 1
-    if (arr[byte_index] & (1 >> bit_index)) {count++;}
-    //cout << "Count: " << count << endl;
-    cout << index << endl;
-    
+    if (arr[byte_index] & (1 << bit_index)) {count++;} 
+
+
     MurmurHash3_x64_128(object,(uint64_t)strlen(object),4,out);
     index = (unsigned long)out[0] % 60000;
     byte_index = index / 8; //this gives the index of the byte.
     bit_index = index % 8; //gives us the bit in that byte to set to 1
-    if (arr[byte_index] & (1 >> bit_index)) {count++;}
-    //cout << "Count: " << count << endl;
-    cout << index << endl;
-    
+    if (arr[byte_index] & (1 << bit_index)) {count++;} 
+
+
     MurmurHash3_x64_128(object,(uint64_t)strlen(object),5,out);
     index = (unsigned long)out[0] % 60000;
     byte_index = index / 8; //this gives the index of the byte.
     bit_index = index % 8; //gives us the bit in that byte to set to 1
-    if (arr[byte_index] & (1 >> bit_index)) {count++;}
-    //cout << "Count: " << count << endl;
-    cout << index << endl;
-    
-    
+    if (arr[byte_index] & (1 << bit_index)) {count++;}    
+
+
     if(count == 5)
     {
         return 1;

@@ -1,4 +1,4 @@
-#include "bloom.cpp"
+#include "../src/bloom_filter.cpp"
 #include <iostream>
 #include <cstring>
 
@@ -19,6 +19,7 @@ int main(){
     {
         cout << "Richard is not on the blacklist." << endl;
     }
+
     if(test.check("Jacob") == 1)
     {
         cout << "Jacob is on the blacklist." << endl;
