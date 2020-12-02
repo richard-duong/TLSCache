@@ -56,7 +56,7 @@ void initialize(const char* blacklist[], int size)
 //copies recvBuffer to arr
 void accept(char* recvBuffer)
 {
-    for (int i = 0; i < 60000; i++)
+    for (int i = 0; i < 7500; i++)
     {
         this->arr[i] = recvBuffer[i];
     }
