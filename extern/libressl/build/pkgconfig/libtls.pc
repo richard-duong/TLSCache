@@ -1,0 +1,16 @@
+#libtls pkg-config source file
+
+prefix=/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl_install
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: LibreSSL-libtls
+Description: Secure communications using the TLS socket protocol.
+Version: 3.1.1
+Requires:
+Requires.private: libcrypto libssl
+Conflicts:
+Libs: -L${libdir} -ltls
+Libs.private:  -lcrypto -lssl  -lpthread -lrt
+Cflags: -I${includedir}

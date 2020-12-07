@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/compat/stdio.h
+../ucrt/stdlib.h
+-
+../ucrt/corecrt_io.h
+-
+../ucrt/stdio.h
+-
+../include/stdio.h
+-
+stdarg.h
+-
+
+../include/openssl/opensslconf.h
+openssl/opensslfeatures.h
+-
+
+../include/openssl/opensslfeatures.h
+
+../include/openssl/poly1305.h
+openssl/opensslconf.h
+-
+stddef.h
+-
+
+/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/tests/poly1305test.c
+stdio.h
+-
+openssl/poly1305.h
+-
+

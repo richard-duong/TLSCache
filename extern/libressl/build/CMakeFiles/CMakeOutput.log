@@ -1,0 +1,550 @@
+The system is: Linux - 4.4.0-18362-Microsoft - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /usr/bin/cc 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is GNU, found in "/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/3.17.2/CompilerIdC/a.out"
+
+Checking whether the ASM compiler is GNU using "--version" matched "(GNU assembler)|(GCC)|(Free Software Foundation)":
+cc (Ubuntu 7.5.0-3ubuntu1~18.04) 7.5.0
+Copyright (C) 2017 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_d0a05/fast && /usr/bin/make  -f CMakeFiles/cmTC_d0a05.dir/build.make CMakeFiles/cmTC_d0a05.dir/build
+make[1]: Entering directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d0a05.dir/testCCompiler.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_d0a05.dir/testCCompiler.c.o   -c /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_d0a05
+/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d0a05.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_d0a05.dir/testCCompiler.c.o  -o cmTC_d0a05 
+make[1]: Leaving directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp'
+
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_aee02/fast && /usr/bin/make  -f CMakeFiles/cmTC_aee02.dir/build.make CMakeFiles/cmTC_aee02.dir/build
+make[1]: Entering directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_aee02.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc   -v -o CMakeFiles/cmTC_aee02.dir/CMakeCCompilerABI.c.o   -c /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/cmake/share/cmake-3.17/Modules/CMakeCCompilerABI.c
+Using built-in specs.
+COLLECT_GCC=/usr/bin/cc
+OFFLOAD_TARGET_NAMES=nvptx-none
+OFFLOAD_TARGET_DEFAULT=1
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Ubuntu 7.5.0-3ubuntu1~18.04' --with-bugurl=file:///usr/share/doc/gcc-7/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++ --prefix=/usr --with-gcc-major-version-only --program-suffix=-7 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-libmpx --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Thread model: posix
+gcc version 7.5.0 (Ubuntu 7.5.0-3ubuntu1~18.04) 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_aee02.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/7/cc1 -quiet -v -imultiarch x86_64-linux-gnu /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/cmake/share/cmake-3.17/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_aee02.dir/CMakeCCompilerABI.c.o -version -fstack-protector-strong -Wformat -Wformat-security -o /tmp/ccLJa4T2.s
+GNU C11 (Ubuntu 7.5.0-3ubuntu1~18.04) version 7.5.0 (x86_64-linux-gnu)
+	compiled by GNU C version 7.5.0, GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version isl-0.19-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/7/../../../../x86_64-linux-gnu/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /usr/lib/gcc/x86_64-linux-gnu/7/include
+ /usr/local/include
+ /usr/lib/gcc/x86_64-linux-gnu/7/include-fixed
+ /usr/include/x86_64-linux-gnu
+ /usr/include
+End of search list.
+GNU C11 (Ubuntu 7.5.0-3ubuntu1~18.04) version 7.5.0 (x86_64-linux-gnu)
+	compiled by GNU C version 7.5.0, GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version isl-0.19-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: b62ed4a2880cd4159476ea8293b72fa8
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_aee02.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+ as -v --64 -o CMakeFiles/cmTC_aee02.dir/CMakeCCompilerABI.c.o /tmp/ccLJa4T2.s
+GNU assembler version 2.30 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.30
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_aee02.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+Linking C executable cmTC_aee02
+/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_aee02.dir/link.txt --verbose=1
+/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_aee02.dir/CMakeCCompilerABI.c.o  -o cmTC_aee02 
+Using built-in specs.
+COLLECT_GCC=/usr/bin/cc
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper
+OFFLOAD_TARGET_NAMES=nvptx-none
+OFFLOAD_TARGET_DEFAULT=1
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Ubuntu 7.5.0-3ubuntu1~18.04' --with-bugurl=file:///usr/share/doc/gcc-7/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++ --prefix=/usr --with-gcc-major-version-only --program-suffix=-7 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-libmpx --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Thread model: posix
+gcc version 7.5.0 (Ubuntu 7.5.0-3ubuntu1~18.04) 
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_aee02' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/cchdqlbg.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_aee02 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_aee02.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_aee02' '-mtune=generic' '-march=x86-64'
+make[1]: Leaving directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp'
+
+
+
+Parsed C implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/usr/lib/gcc/x86_64-linux-gnu/7/include]
+    add: [/usr/local/include]
+    add: [/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed]
+    add: [/usr/include/x86_64-linux-gnu]
+    add: [/usr/include]
+  end of search list found
+  collapse include dir [/usr/lib/gcc/x86_64-linux-gnu/7/include] ==> [/usr/lib/gcc/x86_64-linux-gnu/7/include]
+  collapse include dir [/usr/local/include] ==> [/usr/local/include]
+  collapse include dir [/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed] ==> [/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed]
+  collapse include dir [/usr/include/x86_64-linux-gnu] ==> [/usr/include/x86_64-linux-gnu]
+  collapse include dir [/usr/include] ==> [/usr/include]
+  implicit include dirs: [/usr/lib/gcc/x86_64-linux-gnu/7/include;/usr/local/include;/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed;/usr/include/x86_64-linux-gnu;/usr/include]
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/usr/bin/make cmTC_aee02/fast && /usr/bin/make  -f CMakeFiles/cmTC_aee02.dir/build.make CMakeFiles/cmTC_aee02.dir/build]
+  ignore line: [make[1]: Entering directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_aee02.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc   -v -o CMakeFiles/cmTC_aee02.dir/CMakeCCompilerABI.c.o   -c /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/cmake/share/cmake-3.17/Modules/CMakeCCompilerABI.c]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/usr/bin/cc]
+  ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none]
+  ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+  ignore line: [Target: x86_64-linux-gnu]
+  ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 7.5.0-3ubuntu1~18.04' --with-bugurl=file:///usr/share/doc/gcc-7/README.Bugs --enable-languages=c ada c++ go brig d fortran objc obj-c++ --prefix=/usr --with-gcc-major-version-only --program-suffix=-7 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-libmpx --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 7.5.0 (Ubuntu 7.5.0-3ubuntu1~18.04) ]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_aee02.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+  ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/7/cc1 -quiet -v -imultiarch x86_64-linux-gnu /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/cmake/share/cmake-3.17/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_aee02.dir/CMakeCCompilerABI.c.o -version -fstack-protector-strong -Wformat -Wformat-security -o /tmp/ccLJa4T2.s]
+  ignore line: [GNU C11 (Ubuntu 7.5.0-3ubuntu1~18.04) version 7.5.0 (x86_64-linux-gnu)]
+  ignore line: [	compiled by GNU C version 7.5.0  GMP version 6.1.2  MPFR version 4.0.1  MPC version 1.1.0  isl version isl-0.19-GMP]
+  ignore line: []
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"]
+  ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/7/../../../../x86_64-linux-gnu/include"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/7/include]
+  ignore line: [ /usr/local/include]
+  ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/7/include-fixed]
+  ignore line: [ /usr/include/x86_64-linux-gnu]
+  ignore line: [ /usr/include]
+  ignore line: [End of search list.]
+  ignore line: [GNU C11 (Ubuntu 7.5.0-3ubuntu1~18.04) version 7.5.0 (x86_64-linux-gnu)]
+  ignore line: [	compiled by GNU C version 7.5.0  GMP version 6.1.2  MPFR version 4.0.1  MPC version 1.1.0  isl version isl-0.19-GMP]
+  ignore line: []
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [Compiler executable checksum: b62ed4a2880cd4159476ea8293b72fa8]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_aee02.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+  ignore line: [ as -v --64 -o CMakeFiles/cmTC_aee02.dir/CMakeCCompilerABI.c.o /tmp/ccLJa4T2.s]
+  ignore line: [GNU assembler version 2.30 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.30]
+  ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_aee02.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+  ignore line: [Linking C executable cmTC_aee02]
+  ignore line: [/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_aee02.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_aee02.dir/CMakeCCompilerABI.c.o  -o cmTC_aee02 ]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/usr/bin/cc]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper]
+  ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none]
+  ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+  ignore line: [Target: x86_64-linux-gnu]
+  ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 7.5.0-3ubuntu1~18.04' --with-bugurl=file:///usr/share/doc/gcc-7/README.Bugs --enable-languages=c ada c++ go brig d fortran objc obj-c++ --prefix=/usr --with-gcc-major-version-only --program-suffix=-7 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-libmpx --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 7.5.0 (Ubuntu 7.5.0-3ubuntu1~18.04) ]
+  ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_aee02' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/cchdqlbg.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_aee02 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_aee02.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o]
+    arg [/usr/lib/gcc/x86_64-linux-gnu/7/collect2] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/cchdqlbg.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [--build-id] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [--hash-style=gnu] ==> ignore
+    arg [--as-needed] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-pie] ==> ignore
+    arg [-znow] ==> ignore
+    arg [-zrelro] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_aee02] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o] ==> ignore
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/7] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/7]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib]
+    arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+    arg [-L/lib/../lib] ==> dir [/lib/../lib]
+    arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+    arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/7/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/7/../../..]
+    arg [CMakeFiles/cmTC_aee02.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-lgcc] ==> lib [gcc]
+    arg [--push-state] ==> ignore
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--pop-state] ==> ignore
+    arg [-lc] ==> lib [c]
+    arg [-lgcc] ==> lib [gcc]
+    arg [--push-state] ==> ignore
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--pop-state] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o] ==> ignore
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/7] ==> [/usr/lib/gcc/x86_64-linux-gnu/7]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib] ==> [/usr/lib]
+  collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+  collapse library dir [/lib/../lib] ==> [/lib]
+  collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/7/../../..] ==> [/usr/lib]
+  implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
+  implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/7;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib]
+  implicit fwks: []
+
+
+Determining if the function asprintf exists passed with the following output:
+Change Dir: /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_d5836/fast && /usr/bin/make  -f CMakeFiles/cmTC_d5836.dir/build.make CMakeFiles/cmTC_d5836.dir/build
+make[1]: Entering directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d5836.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -O2 -Wall -DCHECK_FUNCTION_EXISTS=asprintf -fPIE   -o CMakeFiles/cmTC_d5836.dir/CheckFunctionExists.c.o   -c /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/cmake/share/cmake-3.17/Modules/CheckFunctionExists.c
+Linking C executable cmTC_d5836
+/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d5836.dir/link.txt --verbose=1
+/usr/bin/cc  -O2 -Wall -DCHECK_FUNCTION_EXISTS=asprintf    -rdynamic CMakeFiles/cmTC_d5836.dir/CheckFunctionExists.c.o  -o cmTC_d5836 
+make[1]: Leaving directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function reallocarray exists passed with the following output:
+Change Dir: /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_e3e0e/fast && /usr/bin/make  -f CMakeFiles/cmTC_e3e0e.dir/build.make CMakeFiles/cmTC_e3e0e.dir/build
+make[1]: Entering directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e3e0e.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -O2 -Wall -DCHECK_FUNCTION_EXISTS=reallocarray -fPIE   -o CMakeFiles/cmTC_e3e0e.dir/CheckFunctionExists.c.o   -c /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/cmake/share/cmake-3.17/Modules/CheckFunctionExists.c
+Linking C executable cmTC_e3e0e
+/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e3e0e.dir/link.txt --verbose=1
+/usr/bin/cc  -O2 -Wall -DCHECK_FUNCTION_EXISTS=reallocarray    -rdynamic CMakeFiles/cmTC_e3e0e.dir/CheckFunctionExists.c.o  -o cmTC_e3e0e 
+make[1]: Leaving directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function strcasecmp exists passed with the following output:
+Change Dir: /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_e2437/fast && /usr/bin/make  -f CMakeFiles/cmTC_e2437.dir/build.make CMakeFiles/cmTC_e2437.dir/build
+make[1]: Entering directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e2437.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -O2 -Wall -DCHECK_FUNCTION_EXISTS=strcasecmp -fPIE   -o CMakeFiles/cmTC_e2437.dir/CheckFunctionExists.c.o   -c /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/cmake/share/cmake-3.17/Modules/CheckFunctionExists.c
+<command-line>:0:23: warning: conflicting types for built-in function ‘strcasecmp’ [-Wbuiltin-declaration-mismatch]
+/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/cmake/share/cmake-3.17/Modules/CheckFunctionExists.c:7:3: note: in expansion of macro ‘CHECK_FUNCTION_EXISTS’
+   CHECK_FUNCTION_EXISTS(void);
+   ^~~~~~~~~~~~~~~~~~~~~
+Linking C executable cmTC_e2437
+/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e2437.dir/link.txt --verbose=1
+/usr/bin/cc  -O2 -Wall -DCHECK_FUNCTION_EXISTS=strcasecmp    -rdynamic CMakeFiles/cmTC_e2437.dir/CheckFunctionExists.c.o  -o cmTC_e2437 
+make[1]: Leaving directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function strndup exists passed with the following output:
+Change Dir: /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_e4d74/fast && /usr/bin/make  -f CMakeFiles/cmTC_e4d74.dir/build.make CMakeFiles/cmTC_e4d74.dir/build
+make[1]: Entering directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e4d74.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -O2 -Wall -DCHECK_FUNCTION_EXISTS=strndup -fPIE   -o CMakeFiles/cmTC_e4d74.dir/CheckFunctionExists.c.o   -c /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/cmake/share/cmake-3.17/Modules/CheckFunctionExists.c
+<command-line>:0:23: warning: conflicting types for built-in function ‘strndup’ [-Wbuiltin-declaration-mismatch]
+/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/cmake/share/cmake-3.17/Modules/CheckFunctionExists.c:7:3: note: in expansion of macro ‘CHECK_FUNCTION_EXISTS’
+   CHECK_FUNCTION_EXISTS(void);
+   ^~~~~~~~~~~~~~~~~~~~~
+Linking C executable cmTC_e4d74
+/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e4d74.dir/link.txt --verbose=1
+/usr/bin/cc  -O2 -Wall -DCHECK_FUNCTION_EXISTS=strndup    -rdynamic CMakeFiles/cmTC_e4d74.dir/CheckFunctionExists.c.o  -o cmTC_e4d74 
+make[1]: Leaving directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function strnlen exists passed with the following output:
+Change Dir: /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_bc1f5/fast && /usr/bin/make  -f CMakeFiles/cmTC_bc1f5.dir/build.make CMakeFiles/cmTC_bc1f5.dir/build
+make[1]: Entering directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_bc1f5.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -O2 -Wall -DCHECK_FUNCTION_EXISTS=strnlen -fPIE   -o CMakeFiles/cmTC_bc1f5.dir/CheckFunctionExists.c.o   -c /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/cmake/share/cmake-3.17/Modules/CheckFunctionExists.c
+Linking C executable cmTC_bc1f5
+/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bc1f5.dir/link.txt --verbose=1
+/usr/bin/cc  -O2 -Wall -DCHECK_FUNCTION_EXISTS=strnlen    -rdynamic CMakeFiles/cmTC_bc1f5.dir/CheckFunctionExists.c.o  -o cmTC_bc1f5 
+make[1]: Leaving directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function strsep exists passed with the following output:
+Change Dir: /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_db3cb/fast && /usr/bin/make  -f CMakeFiles/cmTC_db3cb.dir/build.make CMakeFiles/cmTC_db3cb.dir/build
+make[1]: Entering directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_db3cb.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -O2 -Wall -DCHECK_FUNCTION_EXISTS=strsep -fPIE   -o CMakeFiles/cmTC_db3cb.dir/CheckFunctionExists.c.o   -c /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/cmake/share/cmake-3.17/Modules/CheckFunctionExists.c
+Linking C executable cmTC_db3cb
+/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_db3cb.dir/link.txt --verbose=1
+/usr/bin/cc  -O2 -Wall -DCHECK_FUNCTION_EXISTS=strsep    -rdynamic CMakeFiles/cmTC_db3cb.dir/CheckFunctionExists.c.o  -o cmTC_db3cb 
+make[1]: Leaving directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function timegm exists passed with the following output:
+Change Dir: /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_19ead/fast && /usr/bin/make  -f CMakeFiles/cmTC_19ead.dir/build.make CMakeFiles/cmTC_19ead.dir/build
+make[1]: Entering directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_19ead.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -O2 -Wall -DCHECK_FUNCTION_EXISTS=timegm -fPIE   -o CMakeFiles/cmTC_19ead.dir/CheckFunctionExists.c.o   -c /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/cmake/share/cmake-3.17/Modules/CheckFunctionExists.c
+Linking C executable cmTC_19ead
+/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_19ead.dir/link.txt --verbose=1
+/usr/bin/cc  -O2 -Wall -DCHECK_FUNCTION_EXISTS=timegm    -rdynamic CMakeFiles/cmTC_19ead.dir/CheckFunctionExists.c.o  -o cmTC_19ead 
+make[1]: Leaving directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function explicit_bzero exists passed with the following output:
+Change Dir: /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_1dbf8/fast && /usr/bin/make  -f CMakeFiles/cmTC_1dbf8.dir/build.make CMakeFiles/cmTC_1dbf8.dir/build
+make[1]: Entering directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_1dbf8.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -O2 -Wall -DCHECK_FUNCTION_EXISTS=explicit_bzero -fPIE   -o CMakeFiles/cmTC_1dbf8.dir/CheckFunctionExists.c.o   -c /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/cmake/share/cmake-3.17/Modules/CheckFunctionExists.c
+Linking C executable cmTC_1dbf8
+/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1dbf8.dir/link.txt --verbose=1
+/usr/bin/cc  -O2 -Wall -DCHECK_FUNCTION_EXISTS=explicit_bzero    -rdynamic CMakeFiles/cmTC_1dbf8.dir/CheckFunctionExists.c.o  -o cmTC_1dbf8 
+make[1]: Leaving directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function getauxval exists passed with the following output:
+Change Dir: /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_bf590/fast && /usr/bin/make  -f CMakeFiles/cmTC_bf590.dir/build.make CMakeFiles/cmTC_bf590.dir/build
+make[1]: Entering directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_bf590.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -O2 -Wall -DCHECK_FUNCTION_EXISTS=getauxval -fPIE   -o CMakeFiles/cmTC_bf590.dir/CheckFunctionExists.c.o   -c /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/cmake/share/cmake-3.17/Modules/CheckFunctionExists.c
+Linking C executable cmTC_bf590
+/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bf590.dir/link.txt --verbose=1
+/usr/bin/cc  -O2 -Wall -DCHECK_FUNCTION_EXISTS=getauxval    -rdynamic CMakeFiles/cmTC_bf590.dir/CheckFunctionExists.c.o  -o cmTC_bf590 
+make[1]: Leaving directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function getentropy exists passed with the following output:
+Change Dir: /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_83b17/fast && /usr/bin/make  -f CMakeFiles/cmTC_83b17.dir/build.make CMakeFiles/cmTC_83b17.dir/build
+make[1]: Entering directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_83b17.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -O2 -Wall -DCHECK_FUNCTION_EXISTS=getentropy -fPIE   -o CMakeFiles/cmTC_83b17.dir/CheckFunctionExists.c.o   -c /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/cmake/share/cmake-3.17/Modules/CheckFunctionExists.c
+Linking C executable cmTC_83b17
+/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_83b17.dir/link.txt --verbose=1
+/usr/bin/cc  -O2 -Wall -DCHECK_FUNCTION_EXISTS=getentropy    -rdynamic CMakeFiles/cmTC_83b17.dir/CheckFunctionExists.c.o  -o cmTC_83b17 
+make[1]: Leaving directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the getpagesize exist passed with the following output:
+Change Dir: /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_250e5/fast && /usr/bin/make  -f CMakeFiles/cmTC_250e5.dir/build.make CMakeFiles/cmTC_250e5.dir/build
+make[1]: Entering directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_250e5.dir/CheckSymbolExists.c.o
+/usr/bin/cc   -O2 -Wall  -fPIE   -o CMakeFiles/cmTC_250e5.dir/CheckSymbolExists.c.o   -c /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_250e5
+/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_250e5.dir/link.txt --verbose=1
+/usr/bin/cc  -O2 -Wall     -rdynamic CMakeFiles/cmTC_250e5.dir/CheckSymbolExists.c.o  -o cmTC_250e5 
+make[1]: Leaving directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp'
+
+
+File /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <unistd.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef getpagesize
+  return ((int*)(&getpagesize))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the function syslog exists passed with the following output:
+Change Dir: /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_d65f1/fast && /usr/bin/make  -f CMakeFiles/cmTC_d65f1.dir/build.make CMakeFiles/cmTC_d65f1.dir/build
+make[1]: Entering directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d65f1.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -O2 -Wall -DCHECK_FUNCTION_EXISTS=syslog -fPIE   -o CMakeFiles/cmTC_d65f1.dir/CheckFunctionExists.c.o   -c /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/cmake/share/cmake-3.17/Modules/CheckFunctionExists.c
+Linking C executable cmTC_d65f1
+/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d65f1.dir/link.txt --verbose=1
+/usr/bin/cc  -O2 -Wall -DCHECK_FUNCTION_EXISTS=syslog    -rdynamic CMakeFiles/cmTC_d65f1.dir/CheckFunctionExists.c.o  -o cmTC_d65f1 
+make[1]: Leaving directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function memmem exists passed with the following output:
+Change Dir: /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_93ec2/fast && /usr/bin/make  -f CMakeFiles/cmTC_93ec2.dir/build.make CMakeFiles/cmTC_93ec2.dir/build
+make[1]: Entering directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_93ec2.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -O2 -Wall -DCHECK_FUNCTION_EXISTS=memmem -fPIE   -o CMakeFiles/cmTC_93ec2.dir/CheckFunctionExists.c.o   -c /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/cmake/share/cmake-3.17/Modules/CheckFunctionExists.c
+Linking C executable cmTC_93ec2
+/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_93ec2.dir/link.txt --verbose=1
+/usr/bin/cc  -O2 -Wall -DCHECK_FUNCTION_EXISTS=memmem    -rdynamic CMakeFiles/cmTC_93ec2.dir/CheckFunctionExists.c.o  -o cmTC_93ec2 
+make[1]: Leaving directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if files err.h exist passed with the following output:
+Change Dir: /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_7a8d4/fast && /usr/bin/make  -f CMakeFiles/cmTC_7a8d4.dir/build.make CMakeFiles/cmTC_7a8d4.dir/build
+make[1]: Entering directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_7a8d4.dir/HAVE_ERR_H.c.o
+/usr/bin/cc   -O2 -Wall  -fPIE   -o CMakeFiles/cmTC_7a8d4.dir/HAVE_ERR_H.c.o   -c /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CheckIncludeFiles/HAVE_ERR_H.c
+Linking C executable cmTC_7a8d4
+/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7a8d4.dir/link.txt --verbose=1
+/usr/bin/cc  -O2 -Wall     -rdynamic CMakeFiles/cmTC_7a8d4.dir/HAVE_ERR_H.c.o  -o cmTC_7a8d4 
+make[1]: Leaving directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function clock_gettime exists in the rt passed with the following output:
+Change Dir: /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_61967/fast && /usr/bin/make  -f CMakeFiles/cmTC_61967.dir/build.make CMakeFiles/cmTC_61967.dir/build
+make[1]: Entering directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_61967.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -O2 -Wall -DCHECK_FUNCTION_EXISTS=clock_gettime -fPIE   -o CMakeFiles/cmTC_61967.dir/CheckFunctionExists.c.o   -c /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/cmake/share/cmake-3.17/Modules/CheckFunctionExists.c
+Linking C executable cmTC_61967
+/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_61967.dir/link.txt --verbose=1
+/usr/bin/cc  -O2 -Wall -DCHECK_FUNCTION_EXISTS=clock_gettime    -rdynamic CMakeFiles/cmTC_61967.dir/CheckFunctionExists.c.o  -o cmTC_61967   -L/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp/time.h  -Wl,-rpath,/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp/time.h -lrt 
+make[1]: Leaving directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file sys/types.h exists passed with the following output:
+Change Dir: /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_e60b8/fast && /usr/bin/make  -f CMakeFiles/cmTC_e60b8.dir/build.make CMakeFiles/cmTC_e60b8.dir/build
+make[1]: Entering directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e60b8.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -O2 -Wall  -fPIE   -o CMakeFiles/cmTC_e60b8.dir/CheckIncludeFile.c.o   -c /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_e60b8
+/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e60b8.dir/link.txt --verbose=1
+/usr/bin/cc  -O2 -Wall     -rdynamic CMakeFiles/cmTC_e60b8.dir/CheckIncludeFile.c.o  -o cmTC_e60b8 
+make[1]: Leaving directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file stdint.h exists passed with the following output:
+Change Dir: /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_1ada3/fast && /usr/bin/make  -f CMakeFiles/cmTC_1ada3.dir/build.make CMakeFiles/cmTC_1ada3.dir/build
+make[1]: Entering directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_1ada3.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -O2 -Wall  -fPIE   -o CMakeFiles/cmTC_1ada3.dir/CheckIncludeFile.c.o   -c /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_1ada3
+/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1ada3.dir/link.txt --verbose=1
+/usr/bin/cc  -O2 -Wall     -rdynamic CMakeFiles/cmTC_1ada3.dir/CheckIncludeFile.c.o  -o cmTC_1ada3 
+make[1]: Leaving directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file stddef.h exists passed with the following output:
+Change Dir: /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_89386/fast && /usr/bin/make  -f CMakeFiles/cmTC_89386.dir/build.make CMakeFiles/cmTC_89386.dir/build
+make[1]: Entering directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_89386.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -O2 -Wall  -fPIE   -o CMakeFiles/cmTC_89386.dir/CheckIncludeFile.c.o   -c /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_89386
+/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_89386.dir/link.txt --verbose=1
+/usr/bin/cc  -O2 -Wall     -rdynamic CMakeFiles/cmTC_89386.dir/CheckIncludeFile.c.o  -o cmTC_89386 
+make[1]: Leaving directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining size of time_t passed with the following output:
+Change Dir: /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_05ddf/fast && /usr/bin/make  -f CMakeFiles/cmTC_05ddf.dir/build.make CMakeFiles/cmTC_05ddf.dir/build
+make[1]: Entering directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_05ddf.dir/SIZEOF_TIME_T.c.o
+/usr/bin/cc   -O2 -Wall  -fPIE   -o CMakeFiles/cmTC_05ddf.dir/SIZEOF_TIME_T.c.o   -c /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CheckTypeSize/SIZEOF_TIME_T.c
+Linking C executable cmTC_05ddf
+/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_05ddf.dir/link.txt --verbose=1
+/usr/bin/cc  -O2 -Wall     -rdynamic CMakeFiles/cmTC_05ddf.dir/SIZEOF_TIME_T.c.o  -o cmTC_05ddf 
+make[1]: Leaving directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function accept4 exists passed with the following output:
+Change Dir: /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_1b51e/fast && /usr/bin/make  -f CMakeFiles/cmTC_1b51e.dir/build.make CMakeFiles/cmTC_1b51e.dir/build
+make[1]: Entering directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_1b51e.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -O2 -Wall -DCHECK_FUNCTION_EXISTS=accept4 -fPIE   -o CMakeFiles/cmTC_1b51e.dir/CheckFunctionExists.c.o   -c /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/cmake/share/cmake-3.17/Modules/CheckFunctionExists.c
+Linking C executable cmTC_1b51e
+/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1b51e.dir/link.txt --verbose=1
+/usr/bin/cc  -O2 -Wall -DCHECK_FUNCTION_EXISTS=accept4    -rdynamic CMakeFiles/cmTC_1b51e.dir/CheckFunctionExists.c.o  -o cmTC_1b51e 
+make[1]: Leaving directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function pipe2 exists passed with the following output:
+Change Dir: /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_c6655/fast && /usr/bin/make  -f CMakeFiles/cmTC_c6655.dir/build.make CMakeFiles/cmTC_c6655.dir/build
+make[1]: Entering directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c6655.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -O2 -Wall -DCHECK_FUNCTION_EXISTS=pipe2 -fPIE   -o CMakeFiles/cmTC_c6655.dir/CheckFunctionExists.c.o   -c /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/cmake/share/cmake-3.17/Modules/CheckFunctionExists.c
+Linking C executable cmTC_c6655
+/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c6655.dir/link.txt --verbose=1
+/usr/bin/cc  -O2 -Wall -DCHECK_FUNCTION_EXISTS=pipe2    -rdynamic CMakeFiles/cmTC_c6655.dir/CheckFunctionExists.c.o  -o cmTC_c6655 
+make[1]: Leaving directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp'
+
+
+

@@ -1,0 +1,15 @@
+#libcrypto pkg-config source file
+
+prefix=/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl_install
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: LibreSSL-libcrypto
+Description: LibreSSL cryptography library
+Version: 3.1.1
+Requires:
+Conflicts:
+Libs: -L${libdir} -lcrypto
+Libs.private:   -lpthread -lrt
+Cflags: -I${includedir}

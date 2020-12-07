@@ -1,0 +1,265 @@
+Determining if the function strlcat exists failed with the following output:
+Change Dir: /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_b1335/fast && /usr/bin/make  -f CMakeFiles/cmTC_b1335.dir/build.make CMakeFiles/cmTC_b1335.dir/build
+make[1]: Entering directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b1335.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -O2 -Wall -DCHECK_FUNCTION_EXISTS=strlcat -fPIE   -o CMakeFiles/cmTC_b1335.dir/CheckFunctionExists.c.o   -c /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/cmake/share/cmake-3.17/Modules/CheckFunctionExists.c
+Linking C executable cmTC_b1335
+/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b1335.dir/link.txt --verbose=1
+/usr/bin/cc  -O2 -Wall -DCHECK_FUNCTION_EXISTS=strlcat    -rdynamic CMakeFiles/cmTC_b1335.dir/CheckFunctionExists.c.o  -o cmTC_b1335 
+CMakeFiles/cmTC_b1335.dir/CheckFunctionExists.c.o: In function `main':
+CheckFunctionExists.c:(.text.startup+0xc): undefined reference to `strlcat'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_b1335.dir/build.make:106: recipe for target 'cmTC_b1335' failed
+make[1]: *** [cmTC_b1335] Error 1
+make[1]: Leaving directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp'
+Makefile:141: recipe for target 'cmTC_b1335/fast' failed
+make: *** [cmTC_b1335/fast] Error 2
+
+
+
+Determining if the function strlcpy exists failed with the following output:
+Change Dir: /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_03762/fast && /usr/bin/make  -f CMakeFiles/cmTC_03762.dir/build.make CMakeFiles/cmTC_03762.dir/build
+make[1]: Entering directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_03762.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -O2 -Wall -DCHECK_FUNCTION_EXISTS=strlcpy -fPIE   -o CMakeFiles/cmTC_03762.dir/CheckFunctionExists.c.o   -c /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/cmake/share/cmake-3.17/Modules/CheckFunctionExists.c
+Linking C executable cmTC_03762
+/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_03762.dir/link.txt --verbose=1
+/usr/bin/cc  -O2 -Wall -DCHECK_FUNCTION_EXISTS=strlcpy    -rdynamic CMakeFiles/cmTC_03762.dir/CheckFunctionExists.c.o  -o cmTC_03762 
+CMakeFiles/cmTC_03762.dir/CheckFunctionExists.c.o: In function `main':
+CheckFunctionExists.c:(.text.startup+0xc): undefined reference to `strlcpy'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_03762.dir/build.make:106: recipe for target 'cmTC_03762' failed
+make[1]: *** [cmTC_03762] Error 1
+make[1]: Leaving directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp'
+Makefile:141: recipe for target 'cmTC_03762/fast' failed
+make: *** [cmTC_03762/fast] Error 2
+
+
+
+Determining if the function arc4random_buf exists failed with the following output:
+Change Dir: /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_fbd85/fast && /usr/bin/make  -f CMakeFiles/cmTC_fbd85.dir/build.make CMakeFiles/cmTC_fbd85.dir/build
+make[1]: Entering directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_fbd85.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -O2 -Wall -DCHECK_FUNCTION_EXISTS=arc4random_buf -fPIE   -o CMakeFiles/cmTC_fbd85.dir/CheckFunctionExists.c.o   -c /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/cmake/share/cmake-3.17/Modules/CheckFunctionExists.c
+Linking C executable cmTC_fbd85
+/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fbd85.dir/link.txt --verbose=1
+/usr/bin/cc  -O2 -Wall -DCHECK_FUNCTION_EXISTS=arc4random_buf    -rdynamic CMakeFiles/cmTC_fbd85.dir/CheckFunctionExists.c.o  -o cmTC_fbd85 
+CMakeFiles/cmTC_fbd85.dir/CheckFunctionExists.c.o: In function `main':
+CheckFunctionExists.c:(.text.startup+0xc): undefined reference to `arc4random_buf'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_fbd85.dir/build.make:106: recipe for target 'cmTC_fbd85' failed
+make[1]: *** [cmTC_fbd85] Error 1
+make[1]: Leaving directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp'
+Makefile:141: recipe for target 'cmTC_fbd85/fast' failed
+make: *** [cmTC_fbd85/fast] Error 2
+
+
+
+Determining if the function arc4random_uniform exists failed with the following output:
+Change Dir: /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_b621b/fast && /usr/bin/make  -f CMakeFiles/cmTC_b621b.dir/build.make CMakeFiles/cmTC_b621b.dir/build
+make[1]: Entering directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b621b.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -O2 -Wall -DCHECK_FUNCTION_EXISTS=arc4random_uniform -fPIE   -o CMakeFiles/cmTC_b621b.dir/CheckFunctionExists.c.o   -c /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/cmake/share/cmake-3.17/Modules/CheckFunctionExists.c
+Linking C executable cmTC_b621b
+/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b621b.dir/link.txt --verbose=1
+/usr/bin/cc  -O2 -Wall -DCHECK_FUNCTION_EXISTS=arc4random_uniform    -rdynamic CMakeFiles/cmTC_b621b.dir/CheckFunctionExists.c.o  -o cmTC_b621b 
+CMakeFiles/cmTC_b621b.dir/CheckFunctionExists.c.o: In function `main':
+CheckFunctionExists.c:(.text.startup+0xc): undefined reference to `arc4random_uniform'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_b621b.dir/build.make:106: recipe for target 'cmTC_b621b' failed
+make[1]: *** [cmTC_b621b] Error 1
+make[1]: Leaving directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp'
+Makefile:141: recipe for target 'cmTC_b621b/fast' failed
+make: *** [cmTC_b621b/fast] Error 2
+
+
+
+Determining if the function getprogname exists failed with the following output:
+Change Dir: /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_9c529/fast && /usr/bin/make  -f CMakeFiles/cmTC_9c529.dir/build.make CMakeFiles/cmTC_9c529.dir/build
+make[1]: Entering directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_9c529.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -O2 -Wall -DCHECK_FUNCTION_EXISTS=getprogname -fPIE   -o CMakeFiles/cmTC_9c529.dir/CheckFunctionExists.c.o   -c /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/cmake/share/cmake-3.17/Modules/CheckFunctionExists.c
+Linking C executable cmTC_9c529
+/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9c529.dir/link.txt --verbose=1
+/usr/bin/cc  -O2 -Wall -DCHECK_FUNCTION_EXISTS=getprogname    -rdynamic CMakeFiles/cmTC_9c529.dir/CheckFunctionExists.c.o  -o cmTC_9c529 
+CMakeFiles/cmTC_9c529.dir/CheckFunctionExists.c.o: In function `main':
+CheckFunctionExists.c:(.text.startup+0xc): undefined reference to `getprogname'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_9c529.dir/build.make:106: recipe for target 'cmTC_9c529' failed
+make[1]: *** [cmTC_9c529] Error 1
+make[1]: Leaving directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp'
+Makefile:141: recipe for target 'cmTC_9c529/fast' failed
+make: *** [cmTC_9c529/fast] Error 2
+
+
+
+Determining if the function syslog_r exists failed with the following output:
+Change Dir: /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_21e6e/fast && /usr/bin/make  -f CMakeFiles/cmTC_21e6e.dir/build.make CMakeFiles/cmTC_21e6e.dir/build
+make[1]: Entering directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_21e6e.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -O2 -Wall -DCHECK_FUNCTION_EXISTS=syslog_r -fPIE   -o CMakeFiles/cmTC_21e6e.dir/CheckFunctionExists.c.o   -c /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/cmake/share/cmake-3.17/Modules/CheckFunctionExists.c
+Linking C executable cmTC_21e6e
+/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_21e6e.dir/link.txt --verbose=1
+/usr/bin/cc  -O2 -Wall -DCHECK_FUNCTION_EXISTS=syslog_r    -rdynamic CMakeFiles/cmTC_21e6e.dir/CheckFunctionExists.c.o  -o cmTC_21e6e 
+CMakeFiles/cmTC_21e6e.dir/CheckFunctionExists.c.o: In function `main':
+CheckFunctionExists.c:(.text.startup+0xc): undefined reference to `syslog_r'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_21e6e.dir/build.make:106: recipe for target 'cmTC_21e6e' failed
+make[1]: *** [cmTC_21e6e] Error 1
+make[1]: Leaving directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp'
+Makefile:141: recipe for target 'cmTC_21e6e/fast' failed
+make: *** [cmTC_21e6e/fast] Error 2
+
+
+
+Determining if the timespecsub exist failed with the following output:
+Change Dir: /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_8f571/fast && /usr/bin/make  -f CMakeFiles/cmTC_8f571.dir/build.make CMakeFiles/cmTC_8f571.dir/build
+make[1]: Entering directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8f571.dir/CheckSymbolExists.c.o
+/usr/bin/cc   -O2 -Wall  -fPIE   -o CMakeFiles/cmTC_8f571.dir/CheckSymbolExists.c.o   -c /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: error: ‘timespecsub’ undeclared (first use in this function); did you mean ‘timespec’?
+   return ((int*)(&timespecsub))[argc];
+                   ^~~~~~~~~~~
+                   timespec
+/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+CMakeFiles/cmTC_8f571.dir/build.make:85: recipe for target 'CMakeFiles/cmTC_8f571.dir/CheckSymbolExists.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_8f571.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp'
+Makefile:141: recipe for target 'cmTC_8f571/fast' failed
+make: *** [cmTC_8f571/fast] Error 2
+
+
+File /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <sys/time.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef timespecsub
+  return ((int*)(&timespecsub))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the function timingsafe_bcmp exists failed with the following output:
+Change Dir: /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_68ce6/fast && /usr/bin/make  -f CMakeFiles/cmTC_68ce6.dir/build.make CMakeFiles/cmTC_68ce6.dir/build
+make[1]: Entering directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_68ce6.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -O2 -Wall -DCHECK_FUNCTION_EXISTS=timingsafe_bcmp -fPIE   -o CMakeFiles/cmTC_68ce6.dir/CheckFunctionExists.c.o   -c /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/cmake/share/cmake-3.17/Modules/CheckFunctionExists.c
+Linking C executable cmTC_68ce6
+/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_68ce6.dir/link.txt --verbose=1
+/usr/bin/cc  -O2 -Wall -DCHECK_FUNCTION_EXISTS=timingsafe_bcmp    -rdynamic CMakeFiles/cmTC_68ce6.dir/CheckFunctionExists.c.o  -o cmTC_68ce6 
+CMakeFiles/cmTC_68ce6.dir/CheckFunctionExists.c.o: In function `main':
+CheckFunctionExists.c:(.text.startup+0xc): undefined reference to `timingsafe_bcmp'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_68ce6.dir/build.make:106: recipe for target 'cmTC_68ce6' failed
+make[1]: *** [cmTC_68ce6] Error 1
+make[1]: Leaving directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp'
+Makefile:141: recipe for target 'cmTC_68ce6/fast' failed
+make: *** [cmTC_68ce6/fast] Error 2
+
+
+
+Determining if the function timingsafe_memcmp exists failed with the following output:
+Change Dir: /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_ea69d/fast && /usr/bin/make  -f CMakeFiles/cmTC_ea69d.dir/build.make CMakeFiles/cmTC_ea69d.dir/build
+make[1]: Entering directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ea69d.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -O2 -Wall -DCHECK_FUNCTION_EXISTS=timingsafe_memcmp -fPIE   -o CMakeFiles/cmTC_ea69d.dir/CheckFunctionExists.c.o   -c /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/cmake/share/cmake-3.17/Modules/CheckFunctionExists.c
+Linking C executable cmTC_ea69d
+/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ea69d.dir/link.txt --verbose=1
+/usr/bin/cc  -O2 -Wall -DCHECK_FUNCTION_EXISTS=timingsafe_memcmp    -rdynamic CMakeFiles/cmTC_ea69d.dir/CheckFunctionExists.c.o  -o cmTC_ea69d 
+CMakeFiles/cmTC_ea69d.dir/CheckFunctionExists.c.o: In function `main':
+CheckFunctionExists.c:(.text.startup+0xc): undefined reference to `timingsafe_memcmp'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_ea69d.dir/build.make:106: recipe for target 'cmTC_ea69d' failed
+make[1]: *** [cmTC_ea69d] Error 1
+make[1]: Leaving directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp'
+Makefile:141: recipe for target 'cmTC_ea69d/fast' failed
+make: *** [cmTC_ea69d/fast] Error 2
+
+
+
+Determining if the function strtonum exists failed with the following output:
+Change Dir: /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_28958/fast && /usr/bin/make  -f CMakeFiles/cmTC_28958.dir/build.make CMakeFiles/cmTC_28958.dir/build
+make[1]: Entering directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_28958.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -O2 -Wall -DCHECK_FUNCTION_EXISTS=strtonum -fPIE   -o CMakeFiles/cmTC_28958.dir/CheckFunctionExists.c.o   -c /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/cmake/share/cmake-3.17/Modules/CheckFunctionExists.c
+Linking C executable cmTC_28958
+/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_28958.dir/link.txt --verbose=1
+/usr/bin/cc  -O2 -Wall -DCHECK_FUNCTION_EXISTS=strtonum    -rdynamic CMakeFiles/cmTC_28958.dir/CheckFunctionExists.c.o  -o cmTC_28958 
+CMakeFiles/cmTC_28958.dir/CheckFunctionExists.c.o: In function `main':
+CheckFunctionExists.c:(.text.startup+0xc): undefined reference to `strtonum'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_28958.dir/build.make:106: recipe for target 'cmTC_28958' failed
+make[1]: *** [cmTC_28958] Error 1
+make[1]: Leaving directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp'
+Makefile:141: recipe for target 'cmTC_28958/fast' failed
+make: *** [cmTC_28958/fast] Error 2
+
+
+
+Determining if the function b64_ntop exists failed with the following output:
+Change Dir: /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_e66e2/fast && /usr/bin/make  -f CMakeFiles/cmTC_e66e2.dir/build.make CMakeFiles/cmTC_e66e2.dir/build
+make[1]: Entering directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e66e2.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -O2 -Wall -DCHECK_FUNCTION_EXISTS=b64_ntop -fPIE   -o CMakeFiles/cmTC_e66e2.dir/CheckFunctionExists.c.o   -c /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/cmake/share/cmake-3.17/Modules/CheckFunctionExists.c
+Linking C executable cmTC_e66e2
+/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e66e2.dir/link.txt --verbose=1
+/usr/bin/cc  -O2 -Wall -DCHECK_FUNCTION_EXISTS=b64_ntop    -rdynamic CMakeFiles/cmTC_e66e2.dir/CheckFunctionExists.c.o  -o cmTC_e66e2 
+CMakeFiles/cmTC_e66e2.dir/CheckFunctionExists.c.o: In function `main':
+CheckFunctionExists.c:(.text.startup+0xc): undefined reference to `b64_ntop'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_e66e2.dir/build.make:106: recipe for target 'cmTC_e66e2' failed
+make[1]: *** [cmTC_e66e2] Error 1
+make[1]: Leaving directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp'
+Makefile:141: recipe for target 'cmTC_e66e2/fast' failed
+make: *** [cmTC_e66e2/fast] Error 2
+
+
+
+Determining if the function readpassphrase exists failed with the following output:
+Change Dir: /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_37524/fast && /usr/bin/make  -f CMakeFiles/cmTC_37524.dir/build.make CMakeFiles/cmTC_37524.dir/build
+make[1]: Entering directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_37524.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -O2 -Wall -DCHECK_FUNCTION_EXISTS=readpassphrase -fPIE   -o CMakeFiles/cmTC_37524.dir/CheckFunctionExists.c.o   -c /home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/cmake/share/cmake-3.17/Modules/CheckFunctionExists.c
+Linking C executable cmTC_37524
+/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_37524.dir/link.txt --verbose=1
+/usr/bin/cc  -O2 -Wall -DCHECK_FUNCTION_EXISTS=readpassphrase    -rdynamic CMakeFiles/cmTC_37524.dir/CheckFunctionExists.c.o  -o cmTC_37524 
+CMakeFiles/cmTC_37524.dir/CheckFunctionExists.c.o: In function `main':
+CheckFunctionExists.c:(.text.startup+0xc): undefined reference to `readpassphrase'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_37524.dir/build.make:106: recipe for target 'cmTC_37524' failed
+make[1]: *** [cmTC_37524] Error 1
+make[1]: Leaving directory '/home/facet/Coursework/Fall_2020/CS165/Projects/exampleTLS/extern/libressl/build/CMakeFiles/CMakeTmp'
+Makefile:141: recipe for target 'cmTC_37524/fast' failed
+make: *** [cmTC_37524/fast] Error 2
+
+
+
