@@ -1,7 +1,4 @@
 // Standard Libraries
-#include <stdio.h>
-#include <stdlib.h>
-#include <cstring>
 #include <iostream>
 
 // External Libraries
@@ -13,15 +10,11 @@
 
 using namespace std;
 
-int main(int argc, char** argv){
+int main(){
 
 	/* Initialize */
 	struct sockaddr_in server_sa;
 	struct tls_config* tls_cfg = NULL;
-	struct tls* tls_ctx;
-
-
-	char buffer[1024];
 	int port = 9999;	
 	int out_socket = -1;
 			
@@ -33,7 +26,7 @@ int main(int argc, char** argv){
 	if ((tls_cfg = tls_config_new()) == NULL)
 		cout << "Error: Unable to allocate TLS config" << endl;
 
-	if (tls_config_set_ca_file(tls_cfg, "../../certificates/root.pem") == -1)
+	if (tls_config_set_ca_file(tls_cfg, "../certs/root.pem") == -1)
 		cout << "Error: Unable to set root CA file" << endl;
 
 
@@ -43,10 +36,11 @@ int main(int argc, char** argv){
 	server_sa.sin_port = htons(port);
 	if(server_sa.sin_addr.s_addr == INADDR_NONE){
 		cout << "Error: Invalid IP address " << argv[1] << endl;
+		usage();
 	}
 
 	/* Get socket */
-	out_socket = socket(AF_INET, SOCK_STREAM, 0);
+	int out_socket = socket(AF_INET, SOCK_STREAM, 0);
 	if(out_socket == -1)
 		cout << "Error: Socket failed" << endl;
 
@@ -57,6 +51,7 @@ int main(int argc, char** argv){
 
 	
 	/* Check for tls creation */
+	struct* tls tls_ctx;
 	if((tls_ctx = tls_client()) == NULL)
 		cout << "Error: Create Client failed" << endl;
 
@@ -77,22 +72,22 @@ int main(int argc, char** argv){
 	}while(i == TLS_WANT_POLLIN || i == TLS_WANT_POLLOUT);
 			
 
-	int w = -1;
-	int written = 0;
-	strcpy(buffer, argv[1]);
-	while(written < strlen(buffer)){
-		w = tls_write(tls_ctx, buffer + written, strlen(buffer) - written);
-
-		// blocking file descriptor situation
-		if(w == TLS_WANT_POLLIN || w == TLS_WANT_POLLOUT)
+	char buffer[1024];
+	int r = -1;
+	int rc = 0;
+	int maxread = sizeof(buffer) - 1;
+	while((r != 0) && rc < maxread){
+		r = tls_read(tls_ctx, buffer + rc, maxread - rc);
+		if(r == TLS_WANT_POLLIN || r == TLS_WANT_POLLOUT)
 			continue;
-		if(w < 0)
+		if(r < 0)
 			cout << "Error: TLS read failed" << endl;
 		else
-			written += w;			
+			rc += r;			
 	}
 
-	cout << "Client sent: " << buffer << endl;
+	buffer[rc] = '\0';
+	cout << "Server sent: buffer" << endl;
 	close(out_socket);
 	return 0;
 }
