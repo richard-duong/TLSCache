@@ -161,8 +161,8 @@ Before being able to run the TLS application, we need to be able to set up the s
 - Read objects from file<br>
 - Generate Bloom Filter for each proxy to use<br>
 - Wait for all proxies to connect<br><br>
-![Server Initialization Image](img/initialize-server.png)<br><br>
-![Packet Transmission: Server Initialization Image](img/packet-initialize-server.png)<br><br><br><br>
+![Server Initialization Image](docs/initialize-server.png)<br><br>
+![Packet Transmission: Server Initialization Image](docs/packet-initialize-server.png)<br><br><br><br>
 
 
 <a name="initial-phase-proxy"/>
@@ -177,8 +177,8 @@ Before being able to run the TLS application, we need to be able to set up the s
 - Generate trie from reading relevant blacklist<br>
 - Request the Bloom Filter from the server<br>
 - Retrieve and copy the Bloom Filter from the buffer<br><br>
-![Proxy Initialization Image](img/initialize-proxy.png)<br><br>
-![Packet Transmission: Proxy Initialization Image](img/packet-initialize-proxy.png)<br><br><br><br>
+![Proxy Initialization Image](docs/initialize-proxy.png)<br><br>
+![Packet Transmission: Proxy Initialization Image](docs/packet-initialize-proxy.png)<br><br><br><br>
 
 
 <a name="initial-phase-client"/>
@@ -188,8 +188,8 @@ Before being able to run the TLS application, we need to be able to set up the s
 - Wait for server to finish receiving initial connections from all proxies<br>
 - Generate proxies.txt and keys.txt for client applications to use later<br>
 - Read and store proxies.txt and keys.txt<br><br>
-![Client Initialization Image](img/initialize-client.png)<br><br>
-![Packet Transmissino: Client Initialization Image](img/packet-initialize-client.png)<br><br><br><br>
+![Client Initialization Image](docs/initialize-client.png)<br><br>
+![Packet Transmissino: Client Initialization Image](docs/packet-initialize-client.png)<br><br><br><br>
 
 
 
@@ -213,8 +213,8 @@ This phase is the standard application process. In the standard application proc
 - Proxy checks if object is on Bloom Filter for blacklisted objects, finds no match<br>
 - Proxy checks local cache for object, finds object<br>
 - Proxy returns object to Client<br><br>
-![Client requests object on proxy no FP Image](img/standard-request-proxy.png)<br><br>
-![Packet Transmission: Client requests object on proxy no FP Image](img/packet-standard-request-proxy.png)<br><br><br><br>
+![Client requests object on proxy no FP Image](docs/standard-request-proxy.png)<br><br>
+![Packet Transmission: Client requests object on proxy no FP Image](docs/packet-standard-request-proxy.png)<br><br><br><br>
 
 
 <a name="standard-phase-scene-2"/>
@@ -229,8 +229,8 @@ This phase is the standard application process. In the standard application proc
 - Server checks locally for object, finds object<br>
 - Server returns object to Proxy<br>
 - Proxy returns object to Client<br><br>
-![Client requests object on server no FP Image](img/standard-request-server.png)<br><br>
-![Packet Transmission: Client requests object on proxy no FP Image](img/standard-request-server-transmission.png)<br><br><br><br>
+![Client requests object on server no FP Image](docs/standard-request-server.png)<br><br>
+![Packet Transmission: Client requests object on proxy no FP Image](docs/standard-request-server-transmission.png)<br><br><br><br>
 
 
 <a name="standard-phase-scene-3"/>
@@ -245,8 +245,8 @@ This phase is the standard application process. In the standard application proc
 - Server checks locally for object, finds no match<br>
 - Server returns *no object found* to Proxy<br>
 - Proxy returns *no object found* to Client<br><br>
-![Client requests nonexistent object no FP Image](img/standard-request-none.png)<br><br>
-![Packet Transmission: Client requests nonexistent object no FP Image](img/standard-request-none-transmission.png)<br><br><br><br>
+![Client requests nonexistent object no FP Image](docs/standard-request-none.png)<br><br>
+![Packet Transmission: Client requests nonexistent object no FP Image](docs/standard-request-none-transmission.png)<br><br><br><br>
 
 
 <a name="standard-phase-scene-4"/>
@@ -258,8 +258,8 @@ This phase is the standard application process. In the standard application proc
 - Proxy checks if object is on Bloom Filter of blacklisted objects, finds match<br>
 - Proxy checks if object is on Trie of blacklisted objects, finds match<br>
 - Proxy returns *access deny* to Client<br><br>
-![Client requests blacklisted object no FP Image](img/standard-request-blacklist.png)<br><br>
-![Packet Transmission: Client requests blacklisted object no FP Image](img/standard-request-blacklist-transmission.png)<br><br><br><br>
+![Client requests blacklisted object no FP Image](docs/standard-request-blacklist.png)<br><br>
+![Packet Transmission: Client requests blacklisted object no FP Image](docs/standard-request-blacklist-transmission.png)<br><br><br><br>
 
 
 
@@ -282,8 +282,8 @@ This phase is the nonstandard application process. In the nonstandard applicatio
 - Proxy checks if object is on Trie of blacklisted objects, finds no match (false positive)<br>
 - Proxy checks local cache for object, finds object<br>
 - Proxy returns object to Client<br><br>
-![Client requests object on proxy FP Image](img/nonstandard-request-proxy.png)<br><br>
-![Packet Transmission: Client requests object on proxy FP Image](img/packet-nonstandard-request-proxy.png)<br><br><br><br>
+![Client requests object on proxy FP Image](docs/nonstandard-request-proxy.png)<br><br>
+![Packet Transmission: Client requests object on proxy FP Image](docs/packet-nonstandard-request-proxy.png)<br><br><br><br>
 
 
 <a name="nonstandard-phase-scene-2"/>
@@ -299,8 +299,8 @@ This phase is the nonstandard application process. In the nonstandard applicatio
 - Server checks locally for object, finds object<br>
 - Server returns object to Proxy<br>
 - Proxy returns object to Client<br><br>
-![Client requests object on server FP Image](img/nonstandard-request-server.png)<br><br>
-![Packet Transmission: Client requests object on server FP Image](img/packet-nonstandard-request-server.png)<br><br><br><br>
+![Client requests object on server FP Image](docs/nonstandard-request-server.png)<br><br>
+![Packet Transmission: Client requests object on server FP Image](docs/packet-nonstandard-request-server.png)<br><br><br><br>
 
 
 <a name="nonstandard-phase-scene-3"/>
@@ -316,8 +316,8 @@ This phase is the nonstandard application process. In the nonstandard applicatio
 - Server checks locally for object, finds no match<br>
 - Server returns *no object found* to Proxy<br>
 - Proxy returns *no object found* to Client<br><br>
-![Client requests nonexistent object FP Image](img/nonstandard-request-none.png)<br><br>
-![Packet Transmission: Client requests nonexistent object FP Image](img/packet-nonstandard-request-none.png)<br><br><br><br>
+![Client requests nonexistent object FP Image](docs/nonstandard-request-none.png)<br><br>
+![Packet Transmission: Client requests nonexistent object FP Image](docs/packet-nonstandard-request-none.png)<br><br><br><br>
 
 
 
