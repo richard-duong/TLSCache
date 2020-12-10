@@ -17,7 +17,7 @@ char proxy3[] = "proxy3";
 char proxy4[] = "proxy4";
 char proxy5[] = "proxy5";
 
-char* HRW(char* object_name)
+int HRW(const char* object_name)
 {
     char oneone[strlen(object_name)];
     strcpy(oneone, object_name);
@@ -76,27 +76,27 @@ char* HRW(char* object_name)
     if (out1 > out2 && out1 > out3 && out1 > out4 && out1 > out5)
     {
         
-        return proxy1;
+        return 0;
     }
     else if (out2 > out1 && out2 > out3 && out2 > out4 && out2 > out5)
     {
         
-        return proxy2;
+        return 1;
     }
     else if (out3 > out1 && out3 > out2 && out3 > out4 && out3 > out5)
     {
         
-        return proxy3;
+        return 2;
     }
     else if (out4 > out1 && out4 > out2 && out4 > out3 && out4 > out5)
     {
         
-        return proxy4;
+        return 3;
     }
     else if (out5 > out1 && out5 > out2 && out5 > out3 && out5 > out4)
     {
         
-        return proxy5;
+        return 4;
     }
     
 }

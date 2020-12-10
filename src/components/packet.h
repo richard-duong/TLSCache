@@ -1,36 +1,70 @@
 #ifndef __PACKET_H__
 #define __PACKET_H__
 
+// standard libraries
+#include <cstring>
+
+
+// custom libraries
+#include "defs.h"
+
 
 class packet{
 
-  private:
-    char* msg;
-    int len;
+private:
+	string buffer;
 
-  public:
-    packet():msg(nullptr), len(0){}
-
-	// copy another packet
-    packet(int len):len(len){
-		this->msg = new char[this->len]{0};
+public:
+	packet()
+	{
+		this->buffer = "";
 	}
 
-	// assume null terminated string
-    packet(char* cpy_msg){
-      this->len = strlen(cpy_msg);
-      this->msg = new char[this->len]{0};
-      strcpy(this->msg, cpy_msg);
-    }
+	void receive(char* recvBuffer, int size)
+	{
+		this->buffer.assign(recvBuffer, size);
+		string prefix = this->buffer.substr(0, 3);
+		if(PREFIXES.find(prefix) == PREFIXES.end()){
+			this->buffer = "";
+		}
 
-    // exact
-    packet(char* cpy_msg, int cpy_len){
-      len = cpy_len + 1;
-      msg = new char[len];
-      strncpy(msg, cpy_msg, cpy_len);
-      msg[len - 1] = 0;
-    } 
+	}
 
+	string getPrefix()
+	{
+		return this->buffer.substr(0, 3);	
+	}
+
+	string getMsg()
+	{
+		return this->buffer.substr(3);
+	}
+
+	const char* c_str()
+	{
+		return this->buffer.c_str();
+	}
+
+
+	void put(string objname)
+	{
+		this->buffer = "PUT" + objname;	
+	}
+
+	void get(string objname)
+	{
+		this->buffer = "GET" + objname;
+	}
+
+	void non()
+	{
+		this->buffer = "NON";
+	}
+
+	void den()
+	{
+		this->buffer = "DEN";
+	}
 
 };
 

@@ -7,4 +7,4 @@ set(LIBRESSL_ROOT_DIR "${CMAKE_CURRENT_SOURCE_DIR}/extern/libressl_install")
 find_package(LibreSSL REQUIRED)
 
 add_subdirectory(src/)
-add_subdirectory(src/tests/)
+#add_subdirectory(src/tests/)
