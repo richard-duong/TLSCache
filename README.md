@@ -10,7 +10,8 @@ A Final Project for CS165 Computer Security designed by Jacob Tan and Richard Du
 Implement a secure proxy application using TLS protocol to provide simple authentication and secure file transmission. With this, we can demonstrate how a large scale system with a server caching objects inside of proxies can interact with a client and provide objects upon request in a secure and optimal manner.<br>
 [The full assignment specifications](docs/finalproject.pdf)<br><br>
 
-___
+
+-----------------------------
 <a name="table-of-contents"/>
 
 
@@ -42,7 +43,7 @@ Table of Contents
 
 
 
-___
+----------------------
 <a name="how-to-use"/>
 
 How to use
@@ -59,7 +60,6 @@ licenses/	// Open source licenses for code used.
 
 
 ### Steps
--------------------------
 1. Download and extract the code.
 2. Run the following commands:
 ```
@@ -82,20 +82,17 @@ $ ./build/src/client 127.0.0.1 9999
 ```
 
 ### How to build and run code
---------------------------
 1. Add your code in `src/client` or `src/server`. 
 2. Go to `build/`
 3. Run `make`
 
 
 ### Scripts included
---------------------------
 1. `setup.sh` should be run exactly once after you have downloaded code, and never again. It extracts and builds the dependencies in extern/, and builds and links the code in src/ with LibreSSL.
 2. `reset.sh` reverts the directory to its initial state. It does not touch `src/` or `certificates/`. Run `make clean` in `certificates/` to delete the generated certificates.
 
 
 ### FAQ
---------------------------
 1. How to generate CA, server and client certificates?
 
 Go to `certificates/` and run `make` to generate all three certificates. 
@@ -122,7 +119,7 @@ If you want to create more binaries, you can copy the three lines explained abov
 
 
 
-___
+------------------------
 <a name="phase-design"/>
 
 Phase Design
@@ -322,7 +319,7 @@ This phase is the nonstandard application process. In the nonstandard applicatio
 
 
 
-___
+----------------------------
 <a name="component-design"/>
 
 Component Design
@@ -388,7 +385,7 @@ The [Rendezvous (HRW) Hash](https://en.wikipedia.org/wiki/Rendezvous_hashing) is
 
 
 
-___
+-------------------------
 <a name="system-design"/>
 
 System Design
@@ -430,7 +427,7 @@ System Design
 
 
 
-___
+--------------------------------
 <a name="distribution-of-work"/>
 
 Distribution of work
@@ -457,7 +454,7 @@ Distribution of work
 
 
 
-___ 
+-----------------------
 <a name="final-words"/>
 
 Final Words
@@ -465,7 +462,7 @@ Final Words
 
 
 
-___
+----------------------
 <a name="references"/>
 
 References
