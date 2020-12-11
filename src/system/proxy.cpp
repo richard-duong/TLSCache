@@ -49,15 +49,17 @@ int main(int argc, char** argv)
 	int proxy = atoi(argv[1]);
 	exit_on_fail("PROXY", "Incorrect proxy number argument", !(proxy >= 0 && proxy < PROXY_NUM));
 	cout << "Proxy" << proxy << " is starting up! Please be patient." << endl;
-	
+
 
 	// buffer initializations
 	char recvBuffer[1024];
 	char sendBuffer[1024];
-	
+
+
 	// file descriptor initialization
 	int fd[2];
 	
+
 	// file initializations
 	ifstream blacklist_file;
 
@@ -73,7 +75,6 @@ int main(int argc, char** argv)
 	struct tls* client_context = nullptr;
 	struct tls* proxy_context = nullptr;
 	struct tls* server_context = nullptr;
-
 
 
 	// status initializations
@@ -129,7 +130,6 @@ int main(int argc, char** argv)
 
 
 	// read blacklist objects into set & bloom filter
-
 	blacklist_file.open(PROXY_PATH[proxy]);
 	file_blacklist_status = blacklist_file.is_open();
 	exit_on_fail("PROXY", "file_blacklist_status", file_blacklist_status == 0);

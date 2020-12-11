@@ -85,10 +85,7 @@ int main(){
 	server_address.sin_addr.s_addr = INADDR_ANY;
 
 
-
-
 	// read objects and store items into object_db
-
 	object_file.open(OBJECT_PATH);
 	file_object_status = object_file.is_open();
 	exit_on_fail("SERVER", "file_object_status", file_object_status == 0);
@@ -101,7 +98,6 @@ int main(){
 		object_db[key] = value;
 	}
 	object_file.close();
-
 	cout << "Loaded " << cnt << " requestable objects onto the server..." << endl;
 
 
@@ -120,7 +116,6 @@ int main(){
 		++cnt;
 	}		
 	blacklist_file.close();
-
 	cout << "Loaded " << cnt << " blacklisted objects onto the server..." << endl;
 
 
@@ -149,8 +144,15 @@ int main(){
 
 
 
-	// TLS Server Create New Config
+
+	/*
+	 * server_context initialized to ACCEPT proxy connections
+	 *
+	 */
+
 	cout << "Preparing TLS Connections..." << endl;
+
+	// TLS Server config file
 	server_config = tls_config_new();
 	exit_on_fail("SERVER", "server_config", server_config == nullptr);
 
@@ -188,7 +190,8 @@ int main(){
 	// listen for packets using the LISTEN socket
 	listen_status = listen(listen_socket, MAX_CONNECTIONS);
 	exit_on_fail("SERVER", "listen_status", listen_status == -1);
-	
+
+
 
 
 	/*
@@ -197,10 +200,9 @@ int main(){
 	 * If not found, then return NON.
 	 */	
 
-
 	cout << "Ready to accept Proxy Requests!" << endl;
 	int proxy_pid = 0;
-	socklen_t proxy_len = sizeof(&proxy_address); // note here if issue
+	socklen_t proxy_len = sizeof(&proxy_address);
 
 	while(1)
 	{
