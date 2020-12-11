@@ -29,7 +29,6 @@ Table of Contents
         b) [TLS](#tls-design)<br>
         c) [Rendezvous Hashing](#rendezvous-hashing-design)<br>
         d) [Bloom Filter](#bloom-filter-design)<br>
-        e) [Trie](#trie-design)<br>
 6. [System Design](#system-design)<br>
         a) [Client](#client-design)<br>
         b) [Server](#server-design)<br>
@@ -57,10 +56,10 @@ scripts/		// Helper scripts.
 	env.sh		// Script helps link libraries (run this before screen)
 	setup.sh	// Run this once to setup the appropriate libraries
 	reset.sh	// Reset the environment
-src/			// All code for client, proxy, and server
-	components/	// Code relating to components
-	system/		// Code relating to server/proxy/client architecture
-	tests/		// Code to run for testing
+src/			// Source code for the TLSCache Application
+	components/	// Components used for HRW, Bloom Filter, and Definitions
+	system/		// Server/Proxy/Client Code and Architecture
+	tests/		// Unit and Integration Tests
 cmake/			// CMake find script. 
 extern/			// Required third party tools and libraries- LibreSSL & CMake.
 licenses/		// Open source licenses for code used.
@@ -92,7 +91,7 @@ $ cd TLSCache/build/
 $ make
 ```
 
-3. To run the system:
+### To run the system:
 ```
 $ cd TLSCache
 $ source scripts/env.sh
@@ -133,10 +132,13 @@ client2_requests.min can be ran with ./build/src/client 2
 ```
 
 
+
 ### Scripts included
 1. `setup.sh` should be run exactly once after you have downloaded code, and never again. It extracts and builds the dependencies in extern/, and builds and links the code in src/ with LibreSSL.
 2. `reset.sh` reverts the directory to its initial state. It does not touch `src/` or `certificates/`. Run `make clean` in `certificates/` to delete the generated certificates.
 3. `env.sh` should be from the project directory `TLSCache` each time you start up a new terminal. If you're using screen, run this script first before starting your screen so all sub-screens will have the libraries linked.
+
+
 
 ------------------------
 <a name="phase-design"/>
@@ -145,7 +147,7 @@ Phase Design
 ============
 
 **1) Initialization**<br>
-This phase prepares the server and proxies with the appropriate blacklists & Bloom Filters<br>
+This phase prepares the server and proxies with the appropriate Blacklists & Bloom Filters<br>
 
 **2) Standard Application Process**<br>
 This phase evaluates our clients' requests without a match on the Bloom Filter<br>
@@ -154,13 +156,15 @@ This phase evaluates our clients' requests without a match on the Bloom Filter<b
 This phase evaluates our clients' requests with a match on the Bloom Filter<br><br><br><br>
 
 
+
 <a name="initial-phase"/>
 
 ## Initialization
-Before being able to run the TLS application, we need to be able to set up the system so that we instantiate the bloom filters and trie blacklists on each proxy. On top of that, because proxies might be set at different times, so what we can do instead, is allow the server to wait for connections from the proxy, and once all of the connections are made, we can pass out the hash keys and allow clients to finally start requesting objects.<br>
+Before being able to run the TLS application, we need to be able to set up the system so that we instantiate the Bloom Filters and Blacklists on each proxy. The way the Server, Proxy, and Client interacts and sets up their own systems is important during this time.<br>
 + **Server Initialization**<br>
 + **Proxy Initialization**<br>
 + **Client Initialization**<br><br>
+
 
 
 <a name="initial-phase-server"/>
@@ -170,42 +174,45 @@ Before being able to run the TLS application, we need to be able to set up the s
 - Entire object file<br>
 - Blacklist object file<br>
 - Proxy name/port list<br>
-- HRW hash key<br>
-- BF hash keys<br>
+- Appropriate "Server TLS" Root, Key, and Cert<br>
 
 **Steps:**
-- Read objects from file<br>
-- Generate Bloom Filter for each proxy to use<br>
-- Wait for all proxies to connect<br><br>
-![Server Initialization Image](docs/initialize-server.png)<br><br>
-![Packet Transmission: Server Initialization Image](docs/packet-initialize-server.png)<br><br><br><br>
+- Read and store requestable objects from file<br>
+- Read and store blacklisted objects from file<br>
+- Distribute blacklisted objects into files for each proxy to read from later<br>
+- Configure TLS contexts and setup listening socket<br><br>
+![Server Initialization Image](docs/initialize-server.png)<br><br><br><br>
+
 
 
 <a name="initial-phase-proxy"/>
 
 ### Proxy Initialization
 **Has access to:**
-- Server port<br>
-- TLS certificate<br>
-- Relevant blacklist object file<br>
+- Relevant blacklist file<br>
+- Appropriate "Client TLS" Root<br>
+- Appropriate "Server TLS" Root, Key, and Cert<br>
 
 **Steps:**
-- Generate trie from reading relevant blacklist<br>
-- Request the Bloom Filter from the server<br>
-- Retrieve and copy the Bloom Filter from the buffer<br><br>
-![Proxy Initialization Image](docs/initialize-proxy.png)<br><br>
-![Packet Transmission: Proxy Initialization Image](docs/packet-initialize-proxy.png)<br><br><br><br>
+- Read blacklist for the specified proxy<br>
+- Create a local bloom filter with blacklisted objects as elements<br>
+- Prepare a cache for objects to be stored on<br>
+- Configure TLS contexts and setup listening socket<br>
+- Prepare a file descriptor pipe for updating the cache<br><br>
+![Proxy Initialization Image](docs/initialize-proxy.png)<br><br><br><br>
+
 
 
 <a name="initial-phase-client"/>
 
 ### Client Initialization
+**Has access to:**
+- Object Requests file<br>
+
 **Steps:**
-- Wait for server to finish receiving initial connections from all proxies<br>
-- Generate proxies.txt and keys.txt for client applications to use later<br>
-- Read and store proxies.txt and keys.txt<br><br>
-![Client Initialization Image](docs/initialize-client.png)<br><br>
-![Packet Transmissino: Client Initialization Image](docs/packet-initialize-client.png)<br><br><br><br>
+- Read in all object requests file from the corresponding client file<br>
+- Configure TLS contexts and setup listening socket<br><br>
+![Client Initialization Image](docs/initialize-client.png)<br><br><br><br>
 
 
 
@@ -231,6 +238,7 @@ This phase is the standard application process. In the standard application proc
 - Proxy returns object to Client<br><br>
 ![Client requests object on proxy no FP Image](docs/standard-request-proxy.png)<br><br>
 ![Packet Transmission: Client requests object on proxy no FP Image](docs/packet-standard-request-proxy.png)<br><br><br><br>
+
 
 
 <a name="standard-phase-scene-2"/>
