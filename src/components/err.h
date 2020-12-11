@@ -23,7 +23,7 @@ using namespace std;
 
 void exit_on_fail(string name, string issue, bool validity){
 	if(validity){
-		cout << name << " - " << issue << " has detected a failure\n" << endl;
+		cout << name << " - " << issue << " has detected a failure" << endl;
 		exit(1);
 	}
 }
@@ -52,11 +52,11 @@ void exit_on_fail(string name, string issue, bool validity){
 
 void verbose_exit_on_fail(string name, string issue, bool validity){
 	if(validity){
-		cout << name << " - " << issue << " has detected a failure\n" << endl;
+		cout << name << " - " << issue << " has detected a failure" << endl;
 		exit(1);
 	}
 	else{
-		cout << name << " - " << issue << " has ran successfully\n" << endl;
+		cout << name << " - " << issue << " has ran successfully" << endl;
 	}
 }
 
