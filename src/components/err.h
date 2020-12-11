@@ -59,4 +59,3 @@ void verbose_exit_on_fail(string name, string issue, bool validity){
 		cout << name << " - " << issue << " has ran successfully" << endl;
 	}
 }
-

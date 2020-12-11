@@ -144,7 +144,6 @@ int main(){
 
 
 
-
 	/*
 	 * server_context initialized to ACCEPT proxy connections
 	 *
