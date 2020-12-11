@@ -1,7 +1,7 @@
 build/
 extern/cmake/
 extern/libressl/
-extern/libressl_install
+extern/libressl_install/
 
 certificates/chain.pem
 certificates/client.crt
