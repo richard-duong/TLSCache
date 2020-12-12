@@ -46,7 +46,6 @@ int main(int argc, char** argv){
 
 	// file initializations
 	ifstream request_file;
-	ofstream object_file;
 
 
 	// storage initializations
