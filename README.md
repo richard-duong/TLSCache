@@ -11,7 +11,6 @@ Implement a secure proxy application using TLS protocol to provide simple authen
 
 
 
-
 -----------------------------
 <a name="table-of-contents"/>
 
@@ -27,9 +26,8 @@ Table of Contents
         c) [Nonstandard Application Process with False Positives](#nonstandard-phase)<br>
 5. [Component Design](#component-design)<br>
         a) [Packet](#packet-design)<br>
-        b) [TLS](#tls-design)<br>
-        c) [Rendezvous Hashing](#rendezvous-hashing-design)<br>
-        d) [Bloom Filter](#bloom-filter-design)<br>
+        b) [Rendezvous Hashing](#rendezvous-hashing-design)<br>
+        c) [Bloom Filter](#bloom-filter-design)<br>
 6. [System Design](#system-design)<br>
         a) [Client](#client-design)<br>
         b) [Server](#server-design)<br>
@@ -40,7 +38,6 @@ Table of Contents
         b) [Richard's Contributions](#richard-contribution)<br>
 8. [Final Words](#final-words)<br>
 9. [References](#references)<br>
-
 
 
 
@@ -70,6 +67,7 @@ docs/           	// Pictures and documents used in the overview design of the si
 ```
 
 
+
 ### Steps (First Time)
 1. Download and extract the code.
 2. Run the following commands:
@@ -93,6 +91,7 @@ $ cd TLSCache/build/
 $ make
 ```
 
+
 ### To run the system:
 ```
 $ cd TLSCache
@@ -115,21 +114,17 @@ Run the client
 $ ./build/src/client 1
 ```
 
+
 ### How to change inputs for client object requests
-1. Edit files in the data directory
+Edit files in the data directory
 ```
 $ cd TLSCache/data/
 $ vim client0_requests.min
 ```
-2. The default request files are meant to help you with different test cases
-File client0_requests.min can be ran with `./build/src/client 0`
-- This file is for you to run your own inputs on. Test away!
-
-File client1_requests.min can be ran with `./build/src/client 1`
-- This file is used to see a quick example of all 3 cases: found object, not found object, blacklisted object
-
-File client2_requests.min can be ran with `./build/src/client 2`
-- This file is used to see duplications and added files to the cache
+The default request files are meant to help you with different test cases<br><br>
+1. Test your own inputs on file `client0_requests.min` which can be ran with `$ ./build/src/client 0`.
+2. To see an example of all **found object, not found object, and blacklisted object** run `client1_requests.min` with `$ ./build/src/client 1`
+3. To see an example of duplications and **objects being added and accessed on the cache**, run `client2_requests.min` with `$ ./build/src/client 2`
 
 
 
@@ -137,7 +132,6 @@ File client2_requests.min can be ran with `./build/src/client 2`
 1. `setup.sh` should be run exactly once after you have downloaded code, and never again. It extracts and builds the dependencies in extern/, and builds and links the code in src/ with LibreSSL.
 2. `reset.sh` reverts the directory to its initial state. It does not touch `src/` or `certificates/`. Run `make clean` in `certificates/` to delete the generated certificates.
 3. `env.sh` should be from the project directory `TLSCache` each time you start up a new terminal. If you're using screen, run this script first before starting your screen so all sub-screens will have the libraries linked.
-
 
 
 
@@ -231,7 +225,6 @@ This phase is the standard application process. In the standard application proc
 <a name="standard-phase-scene-1"/>
 
 ### Scenario 1: Client requests object on proxy
-**Steps:**
 - Client runs HRW on object to determine which proxy holds the cached object<br>
 - Client requests object from result proxy<br>
 - Proxy checks if object is on Bloom Filter for blacklisted objects, finds no match<br>
@@ -244,7 +237,6 @@ This phase is the standard application process. In the standard application proc
 <a name="standard-phase-scene-2"/>
 
 ### Scenario 2: Client requests object on server
-**Steps:**
 - Client runs HRW on object to determine which proxy holds the cached object<br>
 - Client requests object from result proxy<br>
 - Proxy checks if object is on Bloom Filter for blacklisted objects, finds no match<br>
@@ -260,7 +252,6 @@ This phase is the standard application process. In the standard application proc
 <a name="standard-phase-scene-3"/>
 
 ### Scenario 3: Client requests nonexistent object
-**Steps:**
 - Client runs HRW on object to determine which proxy holds the cached object<br>
 - Client requests object from result proxy<br>
 - Proxy checks if object is on Bloom Filter of blacklisted objects, finds no match<br>
@@ -276,7 +267,6 @@ This phase is the standard application process. In the standard application proc
 <a name="standard-phase-scene-4"/>
 
 ### Scenario 4: Client requests blacklisted object
-**Steps:**
 - Client runs HRW on object to determine which proxy holds the cached object<br>
 - Client requests object from result proxy<br>
 - Proxy checks if object is on Bloom Filter of blacklisted objects, finds match<br>
@@ -299,7 +289,6 @@ This phase is the nonstandard application process. In the nonstandard applicatio
 <a name="nonstandard-phase-scene-1"/>
 
 ### Scenario 1: Client requests object on proxy
-**Steps:**
 - Client runs HRW on object to determine which proxy holds the cached object<br>
 - Client requests object from result proxy<br>
 - Proxy checks if object is on Bloom Filter for blacklisted objects, finds match<br>
@@ -313,7 +302,6 @@ This phase is the nonstandard application process. In the nonstandard applicatio
 <a name="nonstandard-phase-scene-2"/>
 
 ### Scenario 2: Client requests object on server
-**Steps:**
 - Client runs HRW on object to determine which proxy holds the cached object<br>
 - Client requests object from result proxy<br>
 - Proxy checks if object is on Bloom Filter for blacklisted objects, finds match<br>
@@ -330,7 +318,6 @@ This phase is the nonstandard application process. In the nonstandard applicatio
 <a name="nonstandard-phase-scene-3"/>
 
 ### Scenario 3: Client requests nonexistent object
-**Steps:**
 - Client runs HRW on object to determine which proxy holds the cached object<br>
 - Client requests object from result proxy<br>
 - Proxy checks if object is on Bloom Filter for blacklisted objects, finds match<br>
@@ -344,7 +331,6 @@ This phase is the nonstandard application process. In the nonstandard applicatio
 
 
 
-
 ----------------------------
 <a name="component-design"/>
 
@@ -352,10 +338,8 @@ Component Design
 ================
 
 + **Packet Design**<br>
-+ **TLS Design**<br>
 + **Rendezvous Hashing Design**<br>
 + **Bloom Filter Design**<br>
-+ **Trie Design**<br><br>
 
 
 
@@ -378,38 +362,61 @@ The packet design when using TLS is much simpler than if one were to incorporate
 + The proxy returns a **NON** to the client during [Standard Client requests nonexistent object](#standard-phase-scene-3) and [Nonstandard Client requests nonexistent object](#nonstandard-phase-scene-3) if the object requested does not exist on the proxy or the server<br>
 
 ### DEN
-+ The proxy returns a **DEN** to the client during [Standard Client requests blacklisted object](#standard-phase-scene-4) if the object requested was a blacklisted object<br><br>
-
-
-
-
-<a name="tls-design"/>
-
-## TLS Design
-
-
++ The proxy returns a **DEN** to the client during [Standard Client requests blacklisted object](#standard-phase-scene-4) if the object requested was a blacklisted object<br><br><br><br>
 
 
 
 <a name="rendezvous-hashing-design"/>
 
 ## Rendezvous Hashing Design
-The [Rendezvous (HRW) Hash](https://en.wikipedia.org/wiki/Rendezvous_hashing) is a standardized optimization of [Consistent Hashing](https://en.wikipedia.org/wiki/Consistent_hashing) used to solve a distributed hash table problem. In this case, we have many objects distributed across multiple proxies. In order to ensure a relatively even distribution of objects, let **O** denote the object name, **P** denote the proxy name, **S** be some string to hash, **k** be some integer key, and **h(S, k)** be the [Murmur3 Hash Function](https://en.wikipedia.org/wiki/MurmurHash) (Also see the [SMHasher Repository](https://github.com/rurban/smhasher) for the full implementation). To determine which proxy to send the object to, we run **h(O||P, k)** with static k for each proxy, and select the largest hash value. Whichever proxy was used in that largest hash value, is the proxy that we will distribute or receive the object from. The original paper <br><br>
+[Rendezvous (Highest Random Weight) Hash](https://en.wikipedia.org/wiki/Rendezvous_hashing) is an algorithm that is a solution to the distributed hash table problem. HRW is a general form of [Consistent Hashing](https://en.wikipedia.org/wiki/Consistent_hashing) and is far less complex and practical in application. We will be using HRW to distribute objects across all proxies for the specifications of this assignment.<br><br>
+
+### How does Rendezvous Hashing work?
+
+#### High level
+Given an object to distribute and a list of proxies, we can generate a set of strings by adding the name of the object to each proxy.<br>
+Here's an example<br>
+```Object = "object1". Proxy 1 = "proxy1", Proxy 2 = "proxy2", Proxy 3 = "proxy3"```<br><br>
+
+Then the strings would be 
+```String1 = "object1proxy1", String2 = "object1proxy2", String3 = "object1proxy3"```<br><br>
+
+We hash each of the strings and order them based on greatest to least<br>
+```OrderedStrings = String2, String1, String3```<br><br>
+
+And now we can determine an order for how we want to distribute the object. In the list, String2 has the **highest random weight** and correlates to **proxy2**. Therefore we would distribute the object to Proxy 2. However, if Proxy 2 is down, we would distribute it to the next correlated proxy on the list, which would be **proxy1**. And so on and so forth. As a result of this design, Rendezvous Hashing is very good when it comes to [Load Balancing](https://en.wikipedia.org/wiki/Load_balancing_(computing)) efficiently as well as minimizing disruption in case a proxy goes down, since all objects of the downed proxy will just be redistributed to the next largest hash.<br<br>
+
+#### Theoretical
+Let *O* denote the object name, *P* denote the set of proxy names for object distribution, *S* be a string, and *h(S)* be a hash function.<br>
+We can say that *P* = {*P<sub>1</sub>*, *P<sub>2</sub>*, ... , *P<sub>n - 1</sub>*, *P<sub>n</sub>*} where any *P<sub>i</sub>* ∈ *P* s.t. 0 < *i* ≤ *n* <br>
+Let *L* be the set of all strings that can be made by concatenating *O* to each *P*<sub>i</sub> ∀ *i*<br>
+Then *L* = {(*O* || *P<sub>1</sub>*), (*O* || *P<sub>2</sub>*), ... , (*O* || *P<sub>n - 1</sub>*), (*O* || *P<sub>n</sub>)*} or<br>
+*L* = {*L<sub>1</sub>*, *L<sub>2</sub>*, ... , *L<sub>n - 1</sub>*, *L<sub>n</sub>*} and each term can be denoted as *L<sub>i</sub>* ∀ *i*<br>
+Then, we have the set of values *V* represent *h(*L<sub>i</sub>*) ∀ *i*<br>
+If we order set *V* by greatest to least, we pick the **greatest** and **available** hash value as the proxy to distribute the object to.<br><br>
+
+### Implementation
+The Rendezvous Hash is implemented inside of `/src/components/hrw.h` and has the function signature of `HRW(string objname)` and 5 proxy names hardcoded into the implementation. We used [MurmurHash3](https://github.com/rurban/smhasher/blob/master/MurmurHash3.cpp) as the hash function of choice with a seed value of 1. The resulting value from calling the function would be the index of the proxy to distribute the object to. <br><br><br><br>
+
 
 
 <a name="bloom-filter-design"/>
 
 ## Bloom Filter Design
+[Bloom Filters](https://en.wikipedia.org/wiki/Bloom_filter#Extensions_and_applications) are a probabilitistic data structure that can test for existence of an element in a set. This is improved compared to testing for existence using a hash table that requires that we store all elements locally. With a bloom filter, we store a fraction of the memory while functioning at the same efficiency as a standard hash table.
 
+### How do Bloom Filters work?
 
+#### High Level
+Let's say we have objects that we want to use and check for existence. We produce an array of bits flagged 0 and several hash functions that will be used on the elements.<br>
+Here's an example<br>
+```
+objects[] = {"item1", "item2", "item3", "item4", "item5"};
+bloom_filter size 15: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+```
 
-
-
-<a name="trie-design"/>
-
-## Trie Design
-
-
+### Implementation
+The Bloom Filter is implemented inside of '/src/components/bf.h' and is a class
 
 
 -------------------------
@@ -460,10 +467,6 @@ System Design
 Distribution of work
 ====================
 
-
-
-
-
 <a name="jacob-contribution"/>
   
 ## Jacob's Contributions
@@ -495,11 +498,11 @@ Final Words
 References
 ==========
 
-[Murmur Hash](https://en.wikipedia.org/wiki/MurmurHash)<br>
-[Murmur Hash Header](https://github.com/rurban/smhasher/blob/master/MurmurHash3.h)<br>
-[Murmur Hash Implementation](https://github.com/rurban/smhasher/blob/master/MurmurHash3.cpp)<br>
-[Bloom Filter Analysis](https://www.cs.ucr.edu/~ravi/Papers/Jrnl/BloomFilterAnalysis.pdf)<br>
-[TLS Manual](https://man.openbsd.org/tls_init.3)<br>
-[Bob Beck TLS Tutorial](https://github.com/bob-beck/libtls/blob/master/TUTORIAL.md)<br>
-[Certificate Authority](https://en.wikipedia.org/wiki/Certificate_authority)<br>
-[Consistent Hashing](https://en.wikipedia.org/wiki/Consistent_hashing)<br>
+- [Murmur Hash](https://en.wikipedia.org/wiki/MurmurHash)<br>
+- [Murmur Hash Header](https://github.com/rurban/smhasher/blob/master/MurmurHash3.h)<br>
+- [Murmur Hash Implementation](https://github.com/rurban/smhasher/blob/master/MurmurHash3.cpp)<br>
+- [Rendezvous Hashing](https://www.microsoft.com/en-us/research/wp-content/uploads/2017/02/HRW98.pdf)<br>
+- [TLS Manual](https://man.openbsd.org/tls_init.3)<br>
+- [Bob Beck TLS Tutorial](https://github.com/bob-beck/libtls/blob/master/TUTORIAL.md)<br>
+- [Certificate Authority](https://en.wikipedia.org/wiki/Certificate_authority)<br>
+- [Consistent Hashing](https://en.wikipedia.org/wiki/Consistent_hashing)<br>
