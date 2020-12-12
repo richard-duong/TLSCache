@@ -1,6 +1,5 @@
 <a name="overview"/>
 
-
 TLS Cache
 =========
 A Final Project for CS165 Computer Security designed by Jacob Tan and Richard Duong<br>
@@ -9,6 +8,8 @@ A Final Project for CS165 Computer Security designed by Jacob Tan and Richard Du
 ## Objective:
 Implement a secure proxy application using TLS protocol to provide simple authentication and secure file transmission. With this, we can demonstrate how a large scale system with a server caching objects inside of proxies can interact with a client and provide objects upon request in a secure and optimal manner.<br>
 [The full assignment specifications](docs/finalproject.pdf)<br><br>
+
+
 
 
 -----------------------------
@@ -39,6 +40,7 @@ Table of Contents
         b) [Richard's Contributions](#richard-contribution)<br>
 8. [Final Words](#final-words)<br>
 9. [References](#references)<br>
+
 
 
 
@@ -119,17 +121,15 @@ $ ./build/src/client 1
 $ cd TLSCache/data/
 $ vim client0_requests.min
 ```
-2. The request files are meant to help you with different test cases
-```
-client0_requests.min can be ran with ./build/src/client 0
-- This file for you to run your own inputs on. Test away!
+2. The default request files are meant to help you with different test cases
+File client0_requests.min can be ran with `./build/src/client 0`
+- This file is for you to run your own inputs on. Test away!
 
-client1_requests.min can be ran with ./build/src/client 1
+File client1_requests.min can be ran with `./build/src/client 1`
 - This file is used to see a quick example of all 3 cases: found object, not found object, blacklisted object
 
-client2_requests.min can be ran with ./build/src/client 2
+File client2_requests.min can be ran with `./build/src/client 2`
 - This file is used to see duplications and added files to the cache
-```
 
 
 
@@ -137,6 +137,7 @@ client2_requests.min can be ran with ./build/src/client 2
 1. `setup.sh` should be run exactly once after you have downloaded code, and never again. It extracts and builds the dependencies in extern/, and builds and links the code in src/ with LibreSSL.
 2. `reset.sh` reverts the directory to its initial state. It does not touch `src/` or `certificates/`. Run `make clean` in `certificates/` to delete the generated certificates.
 3. `env.sh` should be from the project directory `TLSCache` each time you start up a new terminal. If you're using screen, run this script first before starting your screen so all sub-screens will have the libraries linked.
+
 
 
 
@@ -197,7 +198,7 @@ Before being able to run the TLS application, we need to be able to set up the s
 - Read blacklist for the specified proxy<br>
 - Create a local bloom filter with blacklisted objects as elements<br>
 - Prepare a cache for objects to be stored on<br>
-- Configure TLS contexts and setup listening socket<br>
+- Configure TLS contexts and setup listening/connection sockets<br>
 - Prepare a file descriptor pipe for updating the cache<br><br>
 ![Proxy Initialization Image](docs/initialize-proxy.png)<br><br><br><br>
 
@@ -211,7 +212,7 @@ Before being able to run the TLS application, we need to be able to set up the s
 
 **Steps:**
 - Read in all object requests file from the corresponding client file<br>
-- Configure TLS contexts and setup listening socket<br><br>
+- Configure TLS contexts and setup connection socket<br><br>
 ![Client Initialization Image](docs/initialize-client.png)<br><br><br><br>
 
 
@@ -236,8 +237,7 @@ This phase is the standard application process. In the standard application proc
 - Proxy checks if object is on Bloom Filter for blacklisted objects, finds no match<br>
 - Proxy checks local cache for object, finds object<br>
 - Proxy returns object to Client<br><br>
-![Client requests object on proxy no FP Image](docs/standard-request-proxy.png)<br><br>
-![Packet Transmission: Client requests object on proxy no FP Image](docs/packet-standard-request-proxy.png)<br><br><br><br>
+![Client requests object on proxy no FP Image](docs/standard-request-proxy.png)<br><br><br><br>
 
 
 
@@ -253,8 +253,8 @@ This phase is the standard application process. In the standard application proc
 - Server checks locally for object, finds object<br>
 - Server returns object to Proxy<br>
 - Proxy returns object to Client<br><br>
-![Client requests object on server no FP Image](docs/standard-request-server.png)<br><br>
-![Packet Transmission: Client requests object on proxy no FP Image](docs/standard-request-server-transmission.png)<br><br><br><br>
+![Client requests object on server no FP Image](docs/standard-request-server.png)<br><br><br><br>
+
 
 
 <a name="standard-phase-scene-3"/>
@@ -267,10 +267,10 @@ This phase is the standard application process. In the standard application proc
 - Proxy checks local cache for object, finds no match<br>
 - Proxy requests object from server<br>
 - Server checks locally for object, finds no match<br>
-- Server returns *no object found* to Proxy<br>
-- Proxy returns *no object found* to Client<br><br>
-![Client requests nonexistent object no FP Image](docs/standard-request-none.png)<br><br>
-![Packet Transmission: Client requests nonexistent object no FP Image](docs/standard-request-none-transmission.png)<br><br><br><br>
+- Server returns *\[NON\]* to Proxy<br>
+- Proxy returns *\[NON\]* to Client<br><br>
+![Client requests nonexistent object no FP Image](docs/standard-request-none.png)<br><br><br><br>
+
 
 
 <a name="standard-phase-scene-4"/>
@@ -280,20 +280,20 @@ This phase is the standard application process. In the standard application proc
 - Client runs HRW on object to determine which proxy holds the cached object<br>
 - Client requests object from result proxy<br>
 - Proxy checks if object is on Bloom Filter of blacklisted objects, finds match<br>
-- Proxy checks if object is on Trie of blacklisted objects, finds match<br>
-- Proxy returns *access deny* to Client<br><br>
-![Client requests blacklisted object no FP Image](docs/standard-request-blacklist.png)<br><br>
-![Packet Transmission: Client requests blacklisted object no FP Image](docs/standard-request-blacklist-transmission.png)<br><br><br><br>
+- Proxy does an additional validation check to see if object is on the local set of blacklisted objects, finds match<br>
+- Proxy returns *\[DEN\]* to Client<br><br>
+![Client requests blacklisted object no FP Image](docs/standard-request-blacklist.png)<br><br><br><br>
 
 
 
 <a name="nonstandard-phase"/>
 
 ## Nonstandard Application Process with False Positives
-This phase is the nonstandard application process. In the nonstandard application process, we are anticipating an object request that produces false positive on the Bloom Filter. With a false positive, that means the situation where the client requests a blacklisted object is excluded. If the client makes a request to the application, they're expected to encounter one of these three scenarios.<br>
+This phase is the nonstandard application process. In the nonstandard application process, we are anticipating an object request that produces a *false positive* on the Bloom Filter. With a false positive, that means the situation where the client requests a blacklisted object is excluded. If the client makes a request to the application, they're expected to encounter one of these three scenarios.<br>
 + **Scenario 1: Client requests object on proxy**<br>
 + **Scenario 2: Client requests object on server**<br>
 + **Scenario 3: Client requests nonexistent object**<br><br>
+
 
 
 <a name="nonstandard-phase-scene-1"/>
@@ -303,11 +303,11 @@ This phase is the nonstandard application process. In the nonstandard applicatio
 - Client runs HRW on object to determine which proxy holds the cached object<br>
 - Client requests object from result proxy<br>
 - Proxy checks if object is on Bloom Filter for blacklisted objects, finds match<br>
-- Proxy checks if object is on Trie of blacklisted objects, finds no match (false positive)<br>
+- Proxy does an additional validation check to see if object is on the local proxy set of blacklisted objects, finds no match (false positive)<br>
 - Proxy checks local cache for object, finds object<br>
 - Proxy returns object to Client<br><br>
-![Client requests object on proxy FP Image](docs/nonstandard-request-proxy.png)<br><br>
-![Packet Transmission: Client requests object on proxy FP Image](docs/packet-nonstandard-request-proxy.png)<br><br><br><br>
+![Client requests object on proxy FP Image](docs/nonstandard-request-proxy.png)<br><br><br><br>
+
 
 
 <a name="nonstandard-phase-scene-2"/>
@@ -317,14 +317,14 @@ This phase is the nonstandard application process. In the nonstandard applicatio
 - Client runs HRW on object to determine which proxy holds the cached object<br>
 - Client requests object from result proxy<br>
 - Proxy checks if object is on Bloom Filter for blacklisted objects, finds match<br>
-- Proxy checks if object is on Trie of blacklisted objects, finds no match (false positive)<br>
+- Proxy does an additional validation check to see if object is on the local proxy set of blacklisted objects, finds no match (false positive)<br>
 - Proxy checks local cache for object, finds object<br>
 - Proxy requests object from server<br>
 - Server checks locally for object, finds object<br>
 - Server returns object to Proxy<br>
 - Proxy returns object to Client<br><br>
-![Client requests object on server FP Image](docs/nonstandard-request-server.png)<br><br>
-![Packet Transmission: Client requests object on server FP Image](docs/packet-nonstandard-request-server.png)<br><br><br><br>
+![Client requests object on server FP Image](docs/nonstandard-request-server.png)<br><br><br><br>
+
 
 
 <a name="nonstandard-phase-scene-3"/>
@@ -334,14 +334,13 @@ This phase is the nonstandard application process. In the nonstandard applicatio
 - Client runs HRW on object to determine which proxy holds the cached object<br>
 - Client requests object from result proxy<br>
 - Proxy checks if object is on Bloom Filter for blacklisted objects, finds match<br>
-- Proxy checks if object is on Trie of blacklisted objects, finds no match (false positive)<br>
+- Proxy does an additional validation check to see if object is on the local proxy set of blacklisted objects, finds no match (false positive)<br>
 - Proxy checks local cache for object, finds no match<br>
 - Proxy requests object from server<br>
 - Server checks locally for object, finds no match<br>
-- Server returns *no object found* to Proxy<br>
-- Proxy returns *no object found* to Client<br><br>
-![Client requests nonexistent object FP Image](docs/nonstandard-request-none.png)<br><br>
-![Packet Transmission: Client requests nonexistent object FP Image](docs/packet-nonstandard-request-none.png)<br><br><br><br>
+- Server returns *\[NON\]* to Proxy<br>
+- Proxy returns *\[NON\]* to Client<br><br>
+![Client requests nonexistent object FP Image](docs/nonstandard-request-none.png)<br><br><br><br>
 
 
 
@@ -359,29 +358,30 @@ Component Design
 + **Trie Design**<br><br>
 
 
+
 <a name="packet-design"/>
 
 ## Packet Design
-The packet design when using TLS is much simpler than if one were to incorporate a checksum and manually encrypt, where you can just send . However, since proxies and clients will be receiving different types of packets, we need some way of specifying the type of specification. Therefore we've reduced it down to 5 prefixes on the packet that will specify what to anticipate with packet requests coming in and packets sent out. The 5 packet prefixes are: **INI**, **GET**, **PUT**, **NON**, **DEN**.<br><br>
+The packet design when using TLS is much simpler than if one were to incorporate a checksum and manually encrypt, where you can just send . However, since proxies and clients will be receiving different types of packets, we need some way of specifying the type of specification. Therefore we've reduced it down to 4 prefixes on the packet that will specify what to anticipate with packet requests coming in and packets sent out. The 4 packet prefixes are: **GET**, **PUT**, **NON**, **DEN**.<br><br>
 
-### INI
-+ Used by the proxy during [Proxy Initialization](#initial-phase-proxy) to notify the server that the proxy is ready, and to request the bloom filter from the server.<br> 
-+ Used by the server to respond to the proxy during [Proxy Initialization](#initial-phase-proxy) to receive the bloom filter from the server.<br><br>
 
 ### GET
-+ Used by the client during [Standard Application Process](#standard-phase) and [Nonstandard Application Process](#nonstandard-phase) to send an object request to the proxy<br>
-+ Used by the proxy during [Standard Application Process](#standard-phase) and [Nonstandard Application Process](#nonstandard-phase) to send an object request to the server<br>
++ The client prefixes the object request with **GET** during [Standard Application Process](#standard-phase) and [Nonstandard Application Process](#nonstandard-phase) when sending a request to the proxy<br>
++ The proxy prefixes the object request with **GET** during [Standard Application Process](#standard-phase) and [Nonstandard Application Process](#nonstandard-phase) when sending a request to the server<br>
 
 ### PUT
-+ Used by the proxy during [Standard Application Process](#standard-phase) and [Nonstandard Application Process](#nonstandard-phase) to return an object to the client<br>
-+ Used by the server during [Standard Application Process](#standard-phase) and [Nonstandard Application Process](#nonstandard-phase) to return an object to the proxy<br>
++ The proxy prefixes the object data with **PUT** during [Standard Application Process](#standard-phase) and [Nonstandard Application Process](#nonstandard-phase) when returning the object to the client<br>
++ The server prefixes the object data with **PUT** during [Standard Application Process](#standard-phase) and [Nonstandard Application Process](#nonstandard-phase) when returning the object to the proxy<br>
 
 ### NON
-+ Used by the server during [Standard Client requests nonexistent object](#standard-phase-scene-3) and [Nonstandard Client requests nonexistent object](#nonstandard-phase-scene-3) to notify the proxy that the object requested does not exist on the server<br>
-+ Used by the proxy during [Standard Client requests nonexistent object](#standard-phase-scene-3) and [Nonstandard Client requests nonexistent object](#nonstandard-phase-scene-3) to notify the client that the object requested does not exist on the proxy or the server<br>
++ The server returns a **NON** to the proxy during [Standard Client requests nonexistent object](#standard-phase-scene-3) and [Nonstandard Client requests nonexistent object](#nonstandard-phase-scene-3) if the object requested does not exist on the server<br>
++ The proxy returns a **NON** to the client during [Standard Client requests nonexistent object](#standard-phase-scene-3) and [Nonstandard Client requests nonexistent object](#nonstandard-phase-scene-3) if the object requested does not exist on the proxy or the server<br>
 
 ### DEN
-+ Used by the proxy during [Standard Client requests blacklisted object](#standard-phase-scene-4) to notify the client that the object requested was a blacklisted object<br><br>
++ The proxy returns a **DEN** to the client during [Standard Client requests blacklisted object](#standard-phase-scene-4) if the object requested was a blacklisted object<br><br>
+
+
+
 
 <a name="tls-design"/>
 
