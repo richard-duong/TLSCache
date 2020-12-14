@@ -127,7 +127,6 @@ The default request files are meant to help you with different test cases<br><br
 3. To see an example of duplications and **objects being added and accessed on the cache**, run `client2_requests.min` with `$ ./build/src/client 2`
 
 
-
 ### Scripts included
 1. `setup.sh` should be run exactly once after you have downloaded code, and never again. It extracts and builds the dependencies in extern/, and builds and links the code in src/ with LibreSSL.
 2. `reset.sh` reverts the directory to its initial state. It does not touch `src/` or `certificates/`. Run `make clean` in `certificates/` to delete the generated certificates.
