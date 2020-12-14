@@ -372,8 +372,6 @@ The packet design when using TLS is much simpler than if one were to incorporate
 [Rendezvous (Highest Random Weight) Hash](https://en.wikipedia.org/wiki/Rendezvous_hashing) is an algorithm that is a solution to the distributed hash table problem. HRW is a general form of [Consistent Hashing](https://en.wikipedia.org/wiki/Consistent_hashing) and is far less complex and practical in application. We will be using HRW to distribute objects across all proxies for the specifications of this assignment.<br><br>
 
 ### How does Rendezvous Hashing work?
-
-#### High level
 Given an object to distribute and a list of proxies, we can generate a set of strings by adding the name of the object to each proxy.<br>
 Here's an example<br>
 ```Object = "object1". Proxy 1 = "proxy1", Proxy 2 = "proxy2", Proxy 3 = "proxy3"```<br><br>
@@ -386,14 +384,14 @@ We hash each of the strings and order them based on greatest to least<br>
 
 And now we can determine an order for how we want to distribute the object. In the list, String2 has the **highest random weight** and correlates to **proxy2**. Therefore we would distribute the object to Proxy 2. However, if Proxy 2 is down, we would distribute it to the next correlated proxy on the list, which would be **proxy1**. And so on and so forth. As a result of this design, Rendezvous Hashing is very good when it comes to [Load Balancing](https://en.wikipedia.org/wiki/Load_balancing_(computing)) efficiently as well as minimizing disruption in case a proxy goes down, since all objects of the downed proxy will just be redistributed to the next largest hash.<br<br>
 
-#### Theoretical
+### Theoretical explanation
 Let *O* denote the object name, *P* denote the set of proxy names for object distribution, *S* be a string, and *h(S)* be a hash function.<br>
 We can say that *P* = {*P<sub>1</sub>*, *P<sub>2</sub>*, ... , *P<sub>n - 1</sub>*, *P<sub>n</sub>*} where any *P<sub>i</sub>* ∈ *P* s.t. 0 < *i* ≤ *n* <br>
 Let *L* be the set of all strings that can be made by concatenating *O* to each *P*<sub>i</sub> ∀ *i*<br>
 Then *L* = {(*O* || *P<sub>1</sub>*), (*O* || *P<sub>2</sub>*), ... , (*O* || *P<sub>n - 1</sub>*), (*O* || *P<sub>n</sub>)*} or<br>
 *L* = {*L<sub>1</sub>*, *L<sub>2</sub>*, ... , *L<sub>n - 1</sub>*, *L<sub>n</sub>*} and each term can be denoted as *L<sub>i</sub>* ∀ *i*<br>
 Then, we have the set of values *V* represent *h(*L<sub>i</sub>*) ∀ *i*<br>
-If we order set *V* by greatest to least, we pick the **greatest** and **available** hash value as the proxy to distribute the object to.<br><br>
+If we order set *V* by greatest to least, we pick the **largest** and **available** hash value as the proxy to distribute the object to.<br><br>
 
 ### Implementation
 The Rendezvous Hash is implemented inside of `/src/components/hrw.h` and has the function signature of `HRW(string objname)` and 5 proxy names hardcoded into the implementation. We used [MurmurHash3](https://github.com/rurban/smhasher/blob/master/MurmurHash3.cpp) as the hash function of choice with a seed value of 1. The resulting value from calling the function would be the index of the proxy to distribute the object to. <br><br><br><br>
@@ -406,17 +404,56 @@ The Rendezvous Hash is implemented inside of `/src/components/hrw.h` and has the
 [Bloom Filters](https://en.wikipedia.org/wiki/Bloom_filter#Extensions_and_applications) are a probabilitistic data structure that can test for existence of an element in a set. This is improved compared to testing for existence using a hash table that requires that we store all elements locally. With a bloom filter, we store a fraction of the memory while functioning at the same efficiency as a standard hash table.
 
 ### How do Bloom Filters work?
-
-#### High Level
-Let's say we have objects that we want to use and check for existence. We produce an array of bits flagged 0 and several hash functions that will be used on the elements.<br>
+Let's say we have objects that we want to check for existence. We produce an array of bits flagged 0 and several hash functions that will be used on the elements.<br>
 Here's an example<br>
 ```
-objects[] = {"item1", "item2", "item3", "item4", "item5"};
-bloom_filter size 15: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+objects[] = "item1", "item2", "item3", "item4", "item5"
+bloom_filter = 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+bloom_filter_size = 15
+hashes h1, h2, h3
 ```
 
+When inserting objects, we fill in the indexes based on the value of the hashes.<br>
+Putting h1("item1") we may get a value 2<br>
+Putting h2("item1") we may get a value 5<br>
+Putting h3("item1") we may get a value 12<br>
+The resulting bloom filter will look like this:
+`bloom_filter = 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0`
+
+Providing the indexes to fill, we would get the following bloom filter:
+```
+indexes of hash(item1): 2, 5, 12
+indexes of hash(item2): 3, 7, 14
+indexes of hash(item3): 1, 3, 7
+indexes of hash(item4): 2, 3, 9
+indexes of hash(item5): 0, 3, 5
+bloom_filter = 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1
+```
+
+When checking for existence of an object, we just check the indexes of the hashes to see if all values in the indexes of the bloom filter are filled out<br>
+For example, checking for item3, we would check the indexes of the hashes:
+```
+h1("item3") = 1
+h2("item3") = 3
+h3("item3") = 7
+bloom_filter = 1, (1), 1, (1), 0, 1, 0, (1), 0, 1, 0, 0, 1, 0, 1
+```
+We can see that "item3" was inserted into the bloom filter by the hashes, and checking for existence shows that it does exist.<br>
+
+When checking for existence with an item that doesn't exist, we will find at least 1 index from the hash that has a 0.<br>
+For example, checking item6, we would check the indexes of the hashes:
+```
+h1("item6") = 1
+h2("item6") = 6
+h3("item6") = 8
+bloom_filter = 1, (1), 1, 1, 0, 1, (0), 1, (0), 1, 0, 0, 1, 0, 1
+```
+We can see that "item6" has a 0 at indexes 6 and 8, therefore it does not exist in the bloom filter.
+
+
+
 ### Implementation
-The Bloom Filter is implemented inside of '/src/components/bf.h' and is a class
+The Bloom Filter is implemented inside of '/src/components/bf.h' and has 2 class methods. One is to initialize the bloom filter, and the other is to check for existence. For our hash functions, we used [MurmurHash3](https://github.com/rurban/smhasher/blob/master/MurmurHash3.cpp) with seed values ranging from 1-5 as our different hash functions, and did bitwise operations 
 
 
 -------------------------
@@ -498,11 +535,12 @@ Final Words
 References
 ==========
 
+- [Bob Beck TLS Tutorial](https://github.com/bob-beck/libtls/blob/master/TUTORIAL.md)<br>
+- [Certificate Authority](https://en.wikipedia.org/wiki/Certificate_authority)<br>
+- [Consistent Hashing](https://en.wikipedia.org/wiki/Consistent_hashing)<br>
 - [Murmur Hash](https://en.wikipedia.org/wiki/MurmurHash)<br>
 - [Murmur Hash Header](https://github.com/rurban/smhasher/blob/master/MurmurHash3.h)<br>
 - [Murmur Hash Implementation](https://github.com/rurban/smhasher/blob/master/MurmurHash3.cpp)<br>
 - [Rendezvous Hashing](https://www.microsoft.com/en-us/research/wp-content/uploads/2017/02/HRW98.pdf)<br>
 - [TLS Manual](https://man.openbsd.org/tls_init.3)<br>
-- [Bob Beck TLS Tutorial](https://github.com/bob-beck/libtls/blob/master/TUTORIAL.md)<br>
-- [Certificate Authority](https://en.wikipedia.org/wiki/Certificate_authority)<br>
-- [Consistent Hashing](https://en.wikipedia.org/wiki/Consistent_hashing)<br>
+
