@@ -6,6 +6,9 @@
 #include <vector>
 #include <cstring>
 
+// Custom Libraries
+#include "defs.h"
+
 using namespace std;
 
 
